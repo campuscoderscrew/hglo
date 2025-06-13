@@ -1,17 +1,33 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import About from './pages/About'
+import Events from './pages/Events'
+import Officers from './pages/Officers'
+import Join from './pages/Join'
+import Footer from './pages/Footer'
 
 function App() {
 
-  useEffect(() => {
-    fetch('http://localhost:5000/test').then((res) => res.json().then((data) => console.log(data)))
-  }, []);
+  // All pages are broken into components, find the component that corresponds with your page and work on it!!
 
   return (
     <>
-      <h1 className="text-3x1 font-bold underline">
-        Hello World!
-      </h1>
+      <Navbar />
+
+      <Home />
+
+      <About />
+
+      <Events />
+
+      <Officers />
+
+      <Join />
+
+      <Footer />
+
     </>
   )
 }
