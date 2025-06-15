@@ -24,7 +24,7 @@ export default function Officers() {
     <div className="py-16 h-screen relative">
       {/* Slant divider */}
       <h2 className="mb-16 text-3xl text-center font-bold">Meet the Captains</h2>
-      <div className="mx-4 sm:mx-auto sm:w-100 md:w-110 lg:w-200 grid lg:grid-flow-col gap-16">
+      <div className="mx-auto w-fit grid lg:grid-flow-col gap-32">
         {officersInfo.map((info, index) => (
           <Officer key={`officer-${info.name}-${index}`} {...info} />
         ))}
