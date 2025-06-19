@@ -12,7 +12,7 @@ export default function Officer(props) {
                 hover:-rotate-5 hover:*:rotate-6"
             >
                 {/* Card content */}
-                <div className="w-70 sm:w-100 md:w-120 lg:w-75
+                <div className="w-70 sm:w-100 lg:w-75
                     translate-3 rotate-4
                     bg-white rounded-xl shadow-sm 
                     transition duration-300" 
