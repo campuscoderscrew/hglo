@@ -11,7 +11,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-gradient-to-r from-[#43985e] to-[#367f4d] p-4 shadow-lg rounded-b-2xl">
+        <nav className="relative bg-gradient-to-r from-[#43985e] to-[#367f4d] p-4 shadow-lg z-50">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="flex items-center space-x-2">
                     <img
@@ -66,7 +66,7 @@ const Navbar = () => {
 
             {/* Mobile Menu: Conditionally rendered based on the 'isOpen' state*/}
             {isOpen && (
-                <div className="md:hidden mt-4 bg-[#327748] rounded-lg p-4 transition-all duration-300 ease-in-out">
+                <div className="absolute top-full left-0 right-0 md:hidden bg-[#327748] p-4 shadow-xl transition-all duration-300 ease-in-out z-50">
                     <div className="flex flex-col space-y-3">
                         {/* Mobile navigation links*/}
                         <a href="#" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Home</a>
