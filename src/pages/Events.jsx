@@ -5,7 +5,7 @@ export default function Events() {
   //Created example list of events
   const eventCards = [
     {
-      imgSrc: "peepee",
+      imgSrc: "mountains-placeholder.jpg",
       eventName: "Crazy Crazy Fun-Time!",
       dateMonth: "May",
       dateDay: "28",
@@ -16,7 +16,7 @@ export default function Events() {
     },
 
     {
-      imgSrc: "peepee",
+      imgSrc: "mountains-placeholder.jpg",
       eventName: "Crazy Crazy Bad-Time",
       dateMonth: "June",
       dateDay: "20",
@@ -26,7 +26,7 @@ export default function Events() {
         " Lorem ipsum sit amet dolor, Lorem ipsum sit amet dolorr...",
     },
     {
-      imgSrc: "peepee",
+      imgSrc: "mountains-placeholder.jpg",
       eventName: "Crazy Crazy Ok-Time",
       dateMonth: "August",
       dateDay: "15",
@@ -43,23 +43,29 @@ export default function Events() {
       <h3 className="text-center text-xl">
         Come join us and socialize + have fun at one of our events!
       </h3>
-      <h3 className=" text-center mb-24 font-sans text-xl">
+      <h3 className= "text-center mb-24 font-sans text-xl">
         They're open to all prospective students.
       </h3>
-      <ul>
+      <ul className = "flex flex-wrap justify-center gap-15">
         {eventCards.map((eventCard, index) => {
           return (
             <li
               key={index}
-              className=" inline-block border-2 mt-4 rounded shadow"
+              className=" border-2 mt-4 rounded shadow w-75"
             >
-              <h1>{eventCard.eventName}</h1>
-              <p>
-                Date: {eventCard.dateMonth} {eventCard.dateDay}
-              </p>
-              <p>Event Time: {eventCard.dateTime}</p>
-              <p>Location: {eventCard.location}</p>
-              <p>Description: {eventCard.descriptionEvent}</p>
+              <img
+                className="w-full h-45 object-cover object-center mx-auto"
+                src={eventCard.imgSrc}
+              />{" "}
+              <div className="border-2 rounded -mt-4 p-4">
+                <h1>{eventCard.eventName}</h1>
+                <p>
+                  Date: {eventCard.dateMonth} {eventCard.dateDay}
+                </p>
+                <p>Event Time: {eventCard.dateTime}</p>
+                <p>Location: {eventCard.location}</p>
+                <p>Description: {eventCard.descriptionEvent}</p>
+              </div>
             </li>
           );
         })}
