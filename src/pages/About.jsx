@@ -31,17 +31,6 @@ export default function About() {
 
             <div className="h-full bg-white">
 
-                {/* <motion.div
-                    initial={{ y: -200 }}
-                    whileInView={{ y: 0, }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                    viewport={{ once: true }}
-                >
-                    <img src="/about/half-blob.svg"
-                        className="absolute w-35 left-[10%] -top-5 transform rotate-180 lg:w-55 lg:left-[15%] md:w-50 md:left-[10%] sm:w-40 sm:left-[10%]" />
-                </motion.div> */}
-
-
                 <motion.img
                     src="/about/half-blob.svg"
                     className="absolute w-35 left-[10%] -top-5 transform rotate-180 lg:w-55 lg:left-[15%] md:w-50 md:left-[10%] sm:w-40 sm:left-[10%]"
@@ -50,10 +39,6 @@ export default function About() {
                     transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
                     viewport={{ once: true, amount: 0 }}
                 />
-
-
-                {/* <img src="/about/array.svg"
-                    className="absolute -left-10 top-115 w-40 sm:w-45 md:w-50 lg:-left-5 lg:w-60" /> */}
 
                 <motion.img
                     src="/about/array.svg"
@@ -64,9 +49,6 @@ export default function About() {
                     viewport={{ once: true }}
                 />
 
-
-                {/* <img src="/about/half-ring.svg" className="absolute w-10 -right-0 sm:w-15 md:w-20 lg:w-30" /> */}
-
                 <motion.img
                     src="/about/half-ring.svg"
                     className="absolute w-10 -right-0 sm:w-15 md:w-20 lg:w-30"
@@ -76,9 +58,6 @@ export default function About() {
                     viewport={{ once: true }}
                 />
 
-                {/* <img src="/about/waves.svg"
-                    className="absolute w-30 bottom-120 -right-10 sm:w-25 md:w-40 lg:w-40 lg:bottom-40" /> */}
-
                 <motion.img
                     src="/about/waves.svg"
                     className="absolute w-30 bottom-120 -right-10 sm:w-25 md:w-40 lg:w-40 lg:bottom-40"
@@ -87,8 +66,6 @@ export default function About() {
                     transition={{ duration: 0.5, ease: 'easeOut' }}
                     viewport={{ once: true }}
                 />
-
-                {/* <img src="/about/half-circle.svg" className="absolute transform rotate-180 -bottom-5 md:-bottom-10 left-10 w-30 sm:w-50 md:left-30 md:w-50 lg:w-60 lg:left-90" /> */}
 
                 <motion.img
                     src="/about/half-circle.svg"
