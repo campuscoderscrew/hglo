@@ -19,23 +19,23 @@ const Navbar = () => {
                         alt="Custom Logo"
                         className="h-10 w-10"
                     />
-                    <span className="text-white text-2xl font-bold">HGLO</span>
+                    <span className="text-white text-lg font-bold">HGLO</span>
                 </div>
 
                 {/* Desktop Navigation Links: Visible only on medium and larger screens. */}
                 <div className="hidden md:flex space-x-6">
-                    <a href="#" className="text-white hover:text-gray-200 transition duration-300">Home</a>
-                    <a href="#" className="text-white hover:text-gray-200 transition duration-300">About</a>
-                    <a href="#" className="text-white hover:text-gray-200 transition duration-300">Events</a>
-                    <a href="#" className="text-white hover:text-gray-200 transition duration-300">Officers</a>
-                    <a href="#" className="text-white hover:text-gray-200 transition duration-300">Join</a>
+                    <a href="#home" className="text-white hover:text-gray-200 transition duration-300">Home</a>
+                    <a href="#about" className="text-white hover:text-gray-200 transition duration-300">About</a>
+                    <a href="#events" className="text-white hover:text-gray-200 transition duration-300">Events</a>
+                    <a href="#officers" className="text-white hover:text-gray-200 transition duration-300">Officers</a>
+                    <a href="#join" className="text-white hover:text-gray-200 transition duration-300">Join</a>
                 </div>
 
                 {/* Hamburger Icon: Visible only on small screens.*/}
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="text-white focus:outline-none">
                         <svg
-                            className="w-8 h-8"
+                            className="w-6 h-6"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -69,11 +69,11 @@ const Navbar = () => {
                 <div className="absolute top-full left-0 right-0 md:hidden bg-[#327748] p-4 shadow-xl transition-all duration-300 ease-in-out z-50">
                     <div className="flex flex-col space-y-3">
                         {/* Mobile navigation links*/}
-                        <a href="#" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Home</a>
-                        <a href="#" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>About</a>
-                        <a href="#" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Events</a>
-                        <a href="#" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Officers</a>
-                        <a href="#" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Join</a>
+                        <a href="#home" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Home</a>
+                        <a href="#about" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>About</a>
+                        <a href="#events" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Events</a>
+                        <a href="#officers" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Officers</a>
+                        <a href="#join" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Join</a>
                     </div>
                 </div>
             )}
