@@ -23,9 +23,9 @@ const Home = () => {
         </div>
 
         {/* Content Container */}
-          <div className="relative z-10 w-full flex items-center h-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-20">
+        <div className="relative z-10 w-full flex items-center h-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-20">
           {/* Text Content */}
-          <div className="w-full md:w-4/5 lg:w-2/5 p-8 bg-transparent rounded-lg lg:ml-20 xl:ml-28 2xl:ml-40">
+          <div className="w-full md:w-4/5 lg:w-2/5 p-8 bg-transparent rounded-lg">
             <h1 className="text-4xl md:text-5xl font-bold text-white lg:text-gray-800 mb-4 leading-tight">
               HGLO Honors <br /> Ambassadors
             </h1>
@@ -46,7 +46,7 @@ const Home = () => {
                 </button>
               </a>
               <a href="#join">
-                <button className="px-6 py-3 bg-[#43985e] text-white font-semibold rounded-md hover:bg-green-800 transition duration-300 ease-in-out cursor-pointer">
+                <button className="px-6 py-3 bg-[#43985e] text-white font-semibold rounded-md hover:bg-green-800 transition duration-300 ease-in-out cursor-pointer lg:border-2">
                   Join Us
                 </button>
               </a>

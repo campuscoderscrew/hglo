@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-[#43985e] to-[#367f4d] p-4 shadow-lg z-100">
-      <div className="flex justify-between items-center w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-20">
+      <div className="flex justify-between items-center w-full px-4 md:px-6 lg:px-10">
         <div className="flex items-center space-x-2">
           <img
             src={img1}
