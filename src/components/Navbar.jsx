@@ -1,84 +1,84 @@
 import React, { useState } from 'react';
 import img1 from './assets/logo.svg'
 
-// Navbar component with responsive design and a hamburger menu
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-    const [isOpen, setIsOpen] = useState(false);
+  return (
+    <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-[#43985e] to-[#367f4d] p-4 shadow-lg z-100">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="flex items-center space-x-2">
+          <img
+            src={img1}
+            alt="Custom Logo"
+            className="h-10 w-10 cursor-pointer"
+          />
+          <span className="text-white text-lg font-bold cursor-pointer">HGLO</span>
+        </div>
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex space-x-6">
+          {['home', 'about', 'events', 'officers', 'join'].map((item) => (
+            <a
+              key={item}
+              href={`#${item}`}
+              className="text-white font-medium transition duration-300 ease-in-out hover:text-gray-300 hover:scale-110 cursor-pointer"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </a>
+          ))}
+        </div>
 
-    return (
-        <nav className="relative bg-gradient-to-r from-[#43985e] to-[#367f4d] p-4 shadow-lg z-50">
-            <div className="container mx-auto flex justify-between items-center">
-                <div className="flex items-center space-x-2">
-                    <img
-                        src={img1} // Logo
-                        alt="Custom Logo"
-                        className="h-10 w-10"
-                    />
-                    <span className="text-white text-lg font-bold">HGLO</span>
-                </div>
+        {/* Hamburger Icon */}
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="text-white focus:outline-none cursor-pointer">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              )}
+            </svg>
+          </button>
+        </div>
+      </div>
 
-                {/* Desktop Navigation Links: Visible only on medium and larger screens. */}
-                <div className="hidden md:flex space-x-6">
-                    <a href="#home" className="text-white hover:text-gray-200 transition duration-300">Home</a>
-                    <a href="#about" className="text-white hover:text-gray-200 transition duration-300">About</a>
-                    <a href="#events" className="text-white hover:text-gray-200 transition duration-300">Events</a>
-                    <a href="#officers" className="text-white hover:text-gray-200 transition duration-300">Officers</a>
-                    <a href="#join" className="text-white hover:text-gray-200 transition duration-300">Join</a>
-                </div>
-
-                {/* Hamburger Icon: Visible only on small screens.*/}
-                <div className="md:hidden">
-                    <button onClick={toggleMenu} className="text-white focus:outline-none">
-                        <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            {/* Conditional rendering of hamburger or close icon paths */}
-                            {isOpen ? (
-                                // Close icon (X) when menu is open
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M6 18L18 6M6 6l12 12"
-                                ></path>
-                            ) : (
-                                // Hamburger icon when menu is closed
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                ></path>
-                            )}
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            {/* Mobile Menu: Conditionally rendered based on the 'isOpen' state*/}
-            {isOpen && (
-                <div className="absolute top-full left-0 right-0 md:hidden bg-[#327748] p-4 shadow-xl transition-all duration-300 ease-in-out z-50">
-                    <div className="flex flex-col space-y-3">
-                        {/* Mobile navigation links*/}
-                        <a href="#home" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Home</a>
-                        <a href="#about" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>About</a>
-                        <a href="#events" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Events</a>
-                        <a href="#officers" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Officers</a>
-                        <a href="#join" className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300" onClick={toggleMenu}>Join</a>
-                    </div>
-                </div>
-            )}
-        </nav>
-    );
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="absolute top-full left-0 right-0 md:hidden bg-[#327748] p-4 shadow-xl transition-all duration-300 ease-in-out z-50">
+          <div className="flex flex-col space-y-3">
+            {['home', 'about', 'events', 'officers', 'join'].map((item) => (
+              <a
+                key={item}
+                href={`#${item}`}
+                className="block text-white text-lg py-2 px-3 rounded-md hover:bg-green-900 transition duration-300 cursor-pointer"
+                onClick={toggleMenu}
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
+  );
 };
 
 export default Navbar;

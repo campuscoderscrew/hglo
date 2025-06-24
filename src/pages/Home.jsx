@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <section
         id="home"
-        className="relative w-full min-h-[calc(100vh-80px)] pt-[80px] lg:h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden"
+        className="relative w-full h-screen lg:pt-[64px] flex items-center justify-center overflow-hidden"
       >
         {/* Background Image Container */}
         <div
