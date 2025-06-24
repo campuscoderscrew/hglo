@@ -16,36 +16,37 @@ export default function Officers() {
             major: "Biochemistry",
             year: "Junior",
             quote: "If she were to be eaten by a food, it would be ???.",
-            imgSrc: "gradient-waves.svg",
+            imgSrc: "mountains-placeholder.jpg",
         },
     ];
 
     return (
-        <div className="relative bg-white overflow-hidden">
+        <div className="relative bg-white overflow-hidden" id="officers">
             {/* SVG background */}
-            <img
+            <img 
                 className="absolute w-60 md:w-80 
                     bottom-16 -right-16 md:right-32"
-                src="dot-array.svg"
+                src="officers-background/dot-array.svg" 
             />
-            <img
+            <img 
                 className="absolute w-70 lg:w-80 
                     top-[calc(50%-60px)] -left-50"
-                src="gradient-circle.svg"
+                src="officers-background/gradient-circle.svg"
             />
-            <img
+            <img 
                 className="absolute w-50 md:w-60 
                     top-50 -right-30"
-                src="gradient-hoop.svg"
+                src="officers-background/gradient-hoop.svg" 
             />
-            <img
+            <img 
                 className="hidden md:block absolute w-40 
-                    top-[calc(15vw-170px)] left-[calc(50%-200px)]"
-                src="gradient-ripple.svg"
+                    top-[calc(15vw-170px)] left-[calc(50%-200px)]" 
+                src="officers-background/gradient-ripple.svg"
             />
-            <img
-                className="hidden lg:block absolute w-50 top-[calc(50%-200px)] left-50"
-                src="gradient-waves.svg"
+            <img 
+                className="hidden lg:block absolute w-50 
+                    top-[calc(50%-200px)] left-50" 
+                src="officers-background/gradient-waves.svg" 
             />
 
             {/* Tilt divider */}
@@ -59,8 +60,8 @@ export default function Officers() {
                     viewBox="0 0 1200 120"
                     preserveAspectRatio="none"
                 >
-                    <polygon
-                        className="fill-[#CFE0D8]"
+                    <polygon 
+                        className="fill-[#CFE0D8]" 
                         points="0,0 1200,0 0,120"
                     />
                 </svg>
@@ -69,7 +70,7 @@ export default function Officers() {
 
             {/* Captains content */}
             <div className="pb-48">
-                <h2 className="mt-[15vw] mb-24 
+                <h2 className="mt-[15vw] mb-24 z-1
                     text-3xl text-center font-bold"
                 >
                     Meet the Captains
