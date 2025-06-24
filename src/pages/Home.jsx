@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <section
         id="home"
-        className="relative w-full min-h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden"
+        className="relative w-full min-h-[calc(100vh-80px)] pt-[80px] lg:h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden"
       >
         {/* Background Image Container */}
         <div
@@ -23,7 +23,7 @@ const Home = () => {
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 container mx-auto flex items-center h-full px-4 md:px-0">
+          <div className="relative z-10 container mx-auto flex items-center h-full px-4 md:px-0 lg:ml-20">
           {/* Text Content */}
           <div className="w-full md:w-4/5 lg:w-2/5 p-8 bg-transparent rounded-lg">
             <h1 className="text-4xl md:text-5xl font-bold text-white lg:text-gray-800 mb-4 leading-tight">
@@ -37,15 +37,16 @@ const Home = () => {
             <div className="hidden md:flex space-x-4">
               <a href="#officers">
                 <button className="px-6 py-3 
-                    md:bg-white md:text-[#43985e] 
-                    lg:bg-transparent lg:text-green-700 lg:border-2 lg:border-green-700 
-                    font-semibold rounded-md 
-                    hover:bg-green-700 hover:text-white transition duration-300">
+                  md:bg-white md:text-[#43985e] 
+                  lg:bg-transparent lg:text-green-700 lg:border-2 lg:border-green-700 
+                  font-semibold rounded-md 
+                  transition duration-300 ease-in-out 
+                  hover:bg-green-700 hover:text-white hover:border-green-700 cursor-pointer">
                   Meet the Team
                 </button>
               </a>
               <a href="#join">
-                <button className="px-6 py-3 bg-[#43985e] text-white font-semibold rounded-md hover:bg-green-800 transition duration-300">
+                <button className="px-6 py-3 bg-[#43985e] text-white font-semibold rounded-md hover:bg-green-800 transition duration-300 ease-in-out cursor-pointer">
                   Join Us
                 </button>
               </a>
