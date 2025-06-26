@@ -2,7 +2,7 @@ import Button from '../components/Button'
 
 export default function Join() {
     return (
-        <div className="flex flex-col xl:flex-row *:content-center" id="join">
+        <div className="flex flex-col xl:flex-row *:content-center lg:h-[94vh]" id="join">
             <div className="px-24 xl:px-48 py-24 md:py-36 xl:py-40
                 flex-4 relative bg-[#6BB080] overflow-hidden"
             >
@@ -28,7 +28,7 @@ export default function Join() {
                     src="join-background/gradient-hoop1.svg"
                 />
 
-                
+
                 <img
                     className="hidden xl:block z-1 absolute w-65
                         -bottom-20 left-[calc(50%-150px)]"
@@ -51,11 +51,11 @@ export default function Join() {
                 />
 
                 {/* Join introduction for >=md screens */}
-                <div className="flex flex-col gap-8 *:z-1 text-white text-center items-center">
+                <div className="flex flex-col gap-8 *:z-1 text-white text-center items-center justify-center  ">
                     <h2 className="text-4xl font-bold">JOIN US</h2>
 
-                    <p className="min-w-70 max-w-[80%]
-                            hidden md:block text-lg text-balance"
+                    <p className="min-w-100 max-w-[80%]
+                            hidden md:block text-lg md:text-xl text-balance"
                     >
                         Are you passionate about global challenges and eager to
                         share your experiences with prospective students?{" "}
@@ -65,23 +65,23 @@ export default function Join() {
             </div>
 
             {/* Join requirements and form link */}
-            <div className="px-24 xl:px-48 py-12 md:py-16 xl:py-40
+            <div className="sm:px-20 px-10 xl:px-30 py-20 md:py-30 md:px-38 lg:px-44 xl:py-40
                 flex flex-col flex-5 gap-8 
-                bg-white text-lg"
+                bg-white text-lg md:text-xl justify-center"
             >
                 {/* Join introduction for <md screens */}
-                <p className="block md:hidden text-lg text-center text-balance">
+                <p className="block md:hidden text-lg xl:text-xl text-center text-balance">
                     Are you passionate about global challenges and eager to
                     share your experiences with prospective students?{" "}
                     <span className="font-bold">Join our team!</span>
                 </p>
 
-                <hr className="px-4 block md:hidden" />
-                <h3 className="font-bold text-center text-balance">
+                <hr className="px-4 block md:hidden text-[#0000001b]" />
+                <h3 className="font-bold text-center text-balance lg:text-2xl">
                     Eligibility Requirements
                 </h3>
 
-                <p>To become a HGLO Honors Ambassador, you must:</p>
+                <p className="lg:text-lg">To become a HGLO Honors Ambassador, you must:</p>
 
                 {/* 
                   * list-image-[url] does not work for some reason because
@@ -93,11 +93,11 @@ export default function Join() {
                         *:before:bg-[url(checkmark.svg)]
                         *:before:bg-size-[2rem] xl:*:before:bg-size-[2.5rem]
                         *:before:size-[2rem] xl:*:before:size-[2.5rem]
-                        *:grid *:grid-flow-col *:gap-4 *:justify-start"
+                        *:grid *:grid-flow-col *:gap-4 *:justify-start *:lg:text-lg"
                 >
-                    <li>
+                    <li className="mb-4">
                         Be currently enrolled or have previously participated
-                        in the Honors Global Challenges and Solutions program.
+                        in the Honors Global Challenges and Solutions progrlgam.
 
                     </li>
 
@@ -107,16 +107,16 @@ export default function Join() {
                     </li>
                 </ul>
 
-                <p>
+                <p className="lg:text-lg">
                     If you are eligible and would like to join, please fill out
                     the form below!
                 </p>
 
                 <div className="flex justify-center">
                     <button
-                        className="block px-4 py-3 bg-[#66AB7B] 
-                            text-white font-bold rounded-lg shadow-lg
-                            transition-color duration-300 hover:bg-[#86B896]"
+                        className="block px-6 py-4 bg-[#43985e] 
+                            text-white rounded-md shadow-lg
+                            transition-color duration-300 hover:bg-green-800 mt-4 lg:text-lg hover:cursor-pointer"
                         href=""
                         target="_blank"
                     >
