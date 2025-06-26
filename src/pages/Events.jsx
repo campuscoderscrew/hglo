@@ -55,12 +55,12 @@ export default function Events() {
       descriptionEvent:
         " Lorem ipsum sit amet dolor, Lorem ipsum sit amet dolorr...",
     },
-    
+
   ];
 
   return (
     <>
-      <body className="bg-[#CFE0D8]"> {/* make the full background later*/ }
+      <body className="bg-[#CFE0D8]"> {/* make the full background later*/}
         <h1 className="mt-[10vw] text-3xl text-center font-bold mb-5">
           Events
         </h1>
@@ -110,4 +110,3 @@ export default function Events() {
     </>
   );
 }
-  

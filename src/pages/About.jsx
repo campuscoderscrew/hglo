@@ -26,7 +26,7 @@ export default function About() {
 
 
     return (
-        <div className="bg-white relative overflow-hidden">
+        <div className="bg-white relative overflow-hidden" id="about">
             <h1 className="text-center text-3xl font-bold pt-30">About Us</h1>
 
             <div className="h-full bg-white">
