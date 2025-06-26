@@ -1,8 +1,6 @@
 import Offer from '../components/Offer'
 import { motion } from 'motion/react'
 
-// This is a test
-
 export default function About() {
 
     const offers = [
