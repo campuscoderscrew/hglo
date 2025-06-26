@@ -97,7 +97,7 @@ export default function Join() {
                 >
                     <li className="mb-4">
                         Be currently enrolled or have previously participated
-                        in the Honors Global Challenges and Solutions progrlgam.
+                        in the Honors Global Challenges and Solutions program.
 
                     </li>
 
