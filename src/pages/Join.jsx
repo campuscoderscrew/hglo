@@ -4,7 +4,7 @@ export default function Join() {
     return (
         <div className="flex flex-col xl:flex-row *:content-center" id="join">
             <div className="px-24 xl:px-48 py-24 md:py-36 xl:py-40
-                flex-4 relative bg-[#6BB080] overflow-hidden"
+                flex-4 relative bg-hglo-main-500 overflow-hidden"
             >
                 {/* SVG background */}
                 <img
@@ -80,7 +80,7 @@ export default function Join() {
                     <span className="font-bold">Join our team!</span>
                 </p>
 
-                <hr className="px-4 block md:hidden text-[#0000001b]" />
+                <hr className="px-4 block md:hidden opacity-10" />
                 <h3 className="text-lg md:text-xl lg:text-2xl 
                     text-center text-balance font-bold"
                 >
@@ -120,9 +120,9 @@ export default function Join() {
                 <div className="flex justify-center">
                     <button
                         className="mt-4 px-6 py-4 
-                            block bg-[#6BB080] rounded-md shadow-lg text-white  
+                            block bg-hglo-main-500 rounded-md shadow-lg text-white  
                             transition-color duration-300 
-                            hover:bg-[#66AB7B] hover:cursor-pointer"
+                            hover:bg-hglo-main-600 hover:cursor-pointer"
                         href=""
                         target="_blank"
                     >
