@@ -1,5 +1,6 @@
 import Offer from '../components/Offer'
-import { motion } from 'motion/react'
+import { motion } from "framer-motion";
+
 
 export default function About() {
 
