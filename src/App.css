@@ -11,12 +11,13 @@
     #home {
         min-height: 80vh;
     }
+}
 
 @theme {
     --color-hglo-main-400: #86B896;
     --color-hglo-main-500: #66AB7B;
     --color-hglo-main-600: #3A8F54;
-    
+
     --color-hglo-accent1-400: #9DC9DD;
     --color-hglo-accent2-400: #D6A48C;
 
