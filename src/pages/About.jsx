@@ -2,8 +2,6 @@ import Offer from '../components/Offer'
 import { motion } from "framer-motion";
 
 
-//This is a test
-
 export default function About() {
 
     const offers = [

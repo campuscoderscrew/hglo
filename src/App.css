@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+
+@media (min-width: 1024px) and (min-height:1000px) {
+    #home {
+        height: 60vh;
+    }
+}
+
+@media (min-width: 768px) and (max-height:750px) {
+    #home {
+        min-height: 80vh;
+    }
+
 @theme {
     --color-hglo-main-400: #86B896;
     --color-hglo-main-500: #66AB7B;
@@ -10,4 +22,5 @@
 
     --color-hglo-natural-50: #E7E3D4;
     --color-hglo-natural-300: #F3F3F3;
+
 }
