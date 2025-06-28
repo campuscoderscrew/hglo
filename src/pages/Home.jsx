@@ -1,16 +1,17 @@
 import React from 'react';
 import studentsImage from '../components/assets/bgimg.svg';
+import '../App.css'
 
 const Home = () => {
   return (
     <>
       <section
         id="home"
-        className="relative w-full h-screen lg:pt-[64px] flex items-center justify-center overflow-hidden"
+        className="relative max-h-[calc(100vh-4.5rem)] h-[60vh] mt-18 w-screen lg:h-screen lg:p-auto flex items-center justify-center overflow-hidden"
       >
         {/* Background Image Container */}
         <div
-          className="absolute inset-0 bg-cover lg:bg-contain lg:bg-right bg-no-repeat"
+          className="absolute inset-0 bg-cover lg:bg-contain bg-center sm:bg-[center_40%] md:bg-right lg:bg-right bg-no-repeat"
           style={{ backgroundImage: `url(${studentsImage})` }}
         >
           {/* Overlay */}
@@ -18,7 +19,7 @@ const Home = () => {
             {/* Large screens: white-to-transparent fade */}
             <div className="hidden lg:block w-full h-full bg-gradient-to-r from-white via-white/100 to-transparent"></div>
             {/* Small & medium screens: full greenish overlay */}
-            <div className="block lg:hidden w-full h-full bg-[#82A890] opacity-80"></div>
+            <div className="block lg:hidden w-full h-full bg-[#4a7158] opacity-80"></div>
           </div>
         </div>
 
