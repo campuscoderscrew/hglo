@@ -122,7 +122,7 @@ export default function Join() {
                         className="mt-4 px-6 py-4 
                             block bg-[#6BB080] rounded-md shadow-lg text-white  
                             transition-color duration-300 
-                            hover:bg-green-800 hover:cursor-pointer"
+                            hover:bg-[#66AB7B] hover:cursor-pointer"
                         href=""
                         target="_blank"
                     >
