@@ -1,7 +1,7 @@
-import Button from '../components/Button';
+import "../App.css"
 import Event from '../components/Event';
 import Modal from '../components/Modal';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function Events() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,61 +9,73 @@ export default function Events() {
 
   const eventCards = [
     {
-      imgSrc: "mountains-placeholder.jpg",
-      eventName: "Crazy Crazy Fun-Time!",
-      dateMonth: "May",
-      dateDay: "28",
-      dateTime: "5:00 - 7:00PM",
+      img: "mountains-placeholder.jpg",
+      title: "Event Name Here",
+      month: "May",
+      day: "28",
+      time: "5:00 - 7:00PM",
       location: "Dorchester Basemeent",
-      descriptionEvent:
-        " Lorem ipsum sit amet dolor, Lorem ipsum sit amet dolorr...",
+      description:
+        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
     },
     {
-      imgSrc: "mountains-placeholder.jpg",
-      eventName: "Crazy Crazy Bad-Time",
-      dateMonth: "June",
-      dateDay: "20",
-      dateTime: "10:00AM - 7:00PM",
-      location: "Stamp Student Union",
-      descriptionEvent:
-        " Lorem ipsum sit amet dolor, Lorem ipsum sit amet dolorr...",
+      img: "mountains-placeholder.jpg",
+      title: "Event Name Here",
+      month: "May",
+      day: "28",
+      time: "5:00 - 7:00PM",
+      location: "Dorchester Basemeent",
+      description:
+        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
     },
     {
-      imgSrc: "mountains-placeholder.jpg",
-      eventName: "Crazy Crazy Ok-Time",
-      dateMonth: "Sept.",
-      dateDay: "15",
-      dateTime: "12:00AM - 10:00PM",
-      location: "Hornbake",
-      descriptionEvent:
-        " Lorem ipsum sit amet dolor, Lorem ipsum sit amet dolorr...",
+      img: "mountains-placeholder.jpg",
+      title: "Event Name Here",
+      month: "May",
+      day: "28",
+      time: "5:00 - 7:00PM",
+      location: "Dorchester Basemeent",
+      description:
+        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
     },
     {
-      imgSrc: "mountains-placeholder.jpg",
-      eventName: "Crazy Crazy Ok-Time",
-      dateMonth: "Aug.",
-      dateDay: "15",
-      dateTime: "12:00AM - 10:00PM",
-      location: "Hornbake",
-      descriptionEvent:
-        " Lorem ipsum sit amet dolor, Lorem ipsum sit amet dolorr...",
+      img: "mountains-placeholder.jpg",
+      title: "Event Name Here",
+      month: "May",
+      day: "28",
+      time: "5:00 - 7:00PM",
+      location: "Dorchester Basemeent",
+      description:
+        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
     },
     {
-      imgSrc: "mountains-placeholder.jpg",
-      eventName: "Crazy Crazy Ok-Time",
-      dateMonth: "Aug.",
-      dateDay: "15",
-      dateTime: "12:00AM - 10:00PM",
-      location: "Hornbake",
-      descriptionEvent:
-        " Lorem ipsum sit amet dolor, Lorem ipsum sit amet dolorr...",
+      img: "mountains-placeholder.jpg",
+      title: "Event Name Here",
+      month: "May",
+      day: "28",
+      time: "5:00 - 7:00PM",
+      location: "Dorchester Basemeent",
+      description:
+        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
+    },
+    {
+      img: "mountains-placeholder.jpg",
+      title: "Event Name Here",
+      month: "May",
+      day: "28",
+      time: "5:00 - 7:00PM",
+      location: "Dorchester Basemeent",
+      description:
+        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum....",
     },
   ];
 
   return (
     <>
-      <body className="bg-[#CFE0D8]">
-        <h1 className="mt-[10vw] text-3xl text-center font-bold mb-5">
+      {/* flex flex-col justify-center items-center bg-blue */}
+      <div className="bg-[#CFE0D8] w-screen py-25 pt-40 flex flex-col justify-center items-center" id="events">
+
+        <h1 className="text-3xl text-center font-bold mb-5">
           Events
         </h1>
         <h3 className="text-center text-xl">
@@ -72,17 +84,45 @@ export default function Events() {
         <h3 className="text-center mb-24 font-sans text-xl">
           They're open to all prospective students.
         </h3>
-        <ul className="flex flex-wrap justify-center gap-15">
+
+        {/* Events cards */}
+        <div className="flex flex-col justify-center md:grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10 w-[90%] sm:w-[80%]" id="event-cards">
+
           {eventCards.map((eventCard, index) => (
-            <li
-              key={index}
-              className="bg-white mt-4 rounded shadow-lg w-75 cursor-pointer"
-              onClick={() => {
-                setSelectedEvent(eventCard);
-                setIsOpen(true);
-              }}
-            >
-              <img
+            <Event {...eventCard} />
+          ))}
+
+        </div >
+
+        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+          {selectedEvent && (
+            <div className="text-center space-y-4">
+              <h2 className="text-2xl font-bold">{selectedEvent.eventName}</h2>
+              <p className="text-gray-600">
+                {selectedEvent.dateMonth} {selectedEvent.dateDay}
+              </p>
+              <p className="text-gray-600">
+                {selectedEvent.dateTime} · {selectedEvent.location}
+              </p>
+              <p className="text-sm">{selectedEvent.descriptionEvent}</p>
+              <button className="bg-[#66AB7B] rounded text-white font-bold px-6 py-2 shadow">
+                Register
+              </button>
+            </div>
+          )}
+        </Modal>
+
+      </div >
+
+      {/* <li
+            //   key={index}
+            //   className="bg-white mt-4 rounded shadow-lg w-75 cursor-pointer"
+            //   onClick={() => {
+            //     setSelectedEvent(eventCard);
+            //     setIsOpen(true);
+            //   }}
+            // > */}
+      {/* <img
                 className="w-full h-45 object-cover object-center mx-auto rounded shadow-lg"
                 src={eventCard.imgSrc}
                 alt={eventCard.eventName}
@@ -109,33 +149,9 @@ export default function Events() {
                   {eventCard.descriptionEvent}
                 </p>
                 {/* Prevent modal from opening when clicking this button */}
-                <button
-                  className="bg-[#66AB7B] rounded text-white bold px-6 py-2 cursor-pointer shadow mt-4 text-left ml-12"
-                >
-                  Register
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-          {selectedEvent && (
-            <div className="text-center space-y-4">
-              <h2 className="text-2xl font-bold">{selectedEvent.eventName}</h2>
-              <p className="text-gray-600">
-                {selectedEvent.dateMonth} {selectedEvent.dateDay}
-              </p>
-              <p className="text-gray-600">
-                {selectedEvent.dateTime} · {selectedEvent.location}
-              </p>
-              <p className="text-sm">{selectedEvent.descriptionEvent}</p>
-              <button className="bg-[#66AB7B] rounded text-white font-bold px-6 py-2 shadow">
-                Register
-              </button>
-            </div>
-          )}
-        </Modal>
-      </body>
+
+      {/* //         </div>
+      // </li> */}
     </>
   );
 }
