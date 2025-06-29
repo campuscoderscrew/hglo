@@ -8,14 +8,14 @@ export default function Officers() {
             name: "Brennen Le",
             major: "Computer Science & Mathematics",
             year: "Junior",
-            quote: "If he were to be eaten by a food, it would be flan.",
+            quote: " Always ready to grab the karaoke mic and turn any night into a show.",
             imgSrc: "mountains-placeholder.jpg",
         },
         {
             name: "Liz Frisbie",
             major: "Biochemistry",
             year: "Junior",
-            quote: "If she were to be eaten by a food, it would be ???.",
+            quote: "Might accidentally finish a whole TV series in one weekend.",
             imgSrc: "mountains-placeholder.jpg",
         },
     ];

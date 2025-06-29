@@ -13,7 +13,7 @@ function App() {
   // All pages are broken into components, find the component that corresponds with your page and work on it!!
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Navbar />
 
       <Home />
@@ -28,7 +28,7 @@ function App() {
 
       <Footer />
 
-    </>
+    </div>
   )
 }
 
