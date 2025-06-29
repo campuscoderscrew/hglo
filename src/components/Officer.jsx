@@ -15,7 +15,7 @@ export default function Officer(props) {
                 <div className="w-70 sm:w-100 lg:w-75
                     translate-3 rotate-4
                     bg-white rounded-xl shadow-sm 
-                    transition duration-300" 
+                    transition duration-300"
                 >
                     <div className="p-4 grid gap-8 lg:gap-4 
                         grid-flow-col lg:grid-flow-row 
@@ -34,7 +34,7 @@ export default function Officer(props) {
                         >
                             <p className="text-md sm:text-xl font-bold">{name}</p>
                             <p className="text-sm sm:text-base">{major}</p>
-                            <p className="text-sm sm:text-base">{year}</p>
+                            <p className="text-sm sm:text-base font-bold">{year}</p>
                         </div>
                     </div>
 

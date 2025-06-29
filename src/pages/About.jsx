@@ -27,14 +27,14 @@ export default function About() {
 
 
     return (
-        <div className="bg-white relative overflow-hidden" id="about">
+        <div className="bg-white relative" id="about">
             <h1 className="text-center text-3xl font-bold pt-30">About Us</h1>
 
             <div className="h-full bg-white">
 
                 <motion.img
                     src="/about/half-blob.svg"
-                    className="absolute w-35 left-[10%] -top-5 transform rotate-180 lg:w-55 lg:left-[15%] md:w-50 md:left-[10%] sm:w-40 sm:left-[10%]"
+                    className="absolute w-35 left-[10%] -top-5 transform lg:w-55 lg:left-[15%] md:w-50 md:left-[10%] sm:w-40 sm:left-[10%]"
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
