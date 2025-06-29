@@ -8,8 +8,9 @@ const Home = () => {
     <>
       <section
         id="home"
-        className="relative max-h-[calc(100vh-4.5rem)] h-[60vh] mt-18 w-screen lg:h-screen lg:p-auto flex items-center justify-center overflow-hidden"
+        className="relative max-h-[calc(100vh-4.5rem)] h-[60vh] mt-18 w-screen lg:h-screen lg:p-auto flex items-center justify-center"
       >
+        <div className="hidden lg:block lg:bg-[linear-gradient(#ffffff00,_white)] absolute w-full h-15 bottom-0 z-1" id="green-bar"></div>
         {/* Background Image Container */}
         <motion.div
           className="absolute inset-0 bg-cover lg:bg-contain bg-center sm:bg-[center_40%] md:bg-right lg:bg-right bg-no-repeat"
@@ -20,7 +21,7 @@ const Home = () => {
         >
           {/* Overlay */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="hidden lg:block w-full h-full bg-gradient-to-r from-white via-white/100 to-transparent"></div>
+            <div className="hidden lg:block lg:absolute lg:left-30 w-full h-full bg-gradient-to-r from-white via-white/100 to-transparent"></div>
             <div className="block lg:hidden w-full h-full bg-[#4a7158] opacity-80"></div>
           </div>
         </motion.div>

@@ -73,7 +73,7 @@ export default function Events() {
   return (
     <>
       {/* flex flex-col justify-center items-center bg-blue */}
-      <div className="bg-[#CFE0D8] w-screen py-25 pt-40 flex flex-col justify-center items-center" id="events">
+      <div className="bg-[linear-gradient(white,_#CFE0D8)] w-screen py-25 pt-40 flex flex-col justify-center items-center" id="events">
 
         <h1 className="text-3xl text-center font-bold mb-5">
           Events
@@ -86,7 +86,7 @@ export default function Events() {
         </h3>
 
         {/* Events cards */}
-        <div className="flex flex-col justify-center md:grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10 w-[90%] sm:w-[80%]" id="event-cards">
+        <div className="flex flex-col justify-center md:grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10 w-[90%] sm:w-[80%]lg:transform lg:scale-90" id="event-cards">
 
           {eventCards.map((eventCard, index) => (
             <Event {...eventCard} />
