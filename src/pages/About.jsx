@@ -6,19 +6,19 @@ export default function About() {
 
     const offers = [
         {
-            icon: "../public/about/Commercial.svg",
+            icon: "../about/Commercial.svg",
             title: "outreach",
             pointOne: "Represent the Honors College at panels for prospective and incoming students",
             pointTwo: "Participate in letter writing campaigns to prospective students"
         },
         {
-            icon: "../public/about/Users.svg",
+            icon: "../about/Users.svg",
             title: "community building",
             pointOne: "Host memorable, engaging social events",
             pointTwo: "Foster friendships and connections within the Honors Global Challenges & Solutions community"
         },
         {
-            icon: "../public/about/Star.svg",
+            icon: "../about/Star.svg",
             title: "exclusive perks",
             pointOne: "Enjoy free coffee credit during finals week at Starbucks in STAMP",
             pointTwo: "Attend events with provided snacks and drinks, courtesy of the Honors College"
