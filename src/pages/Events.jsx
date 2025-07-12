@@ -73,21 +73,31 @@ export default function Events() {
   return (
     <>
       {/* flex flex-col justify-center items-center bg-blue */}
-      <div className="bg-[linear-gradient(white,_#CFE0D8)] w-screen py-25 pt-40 flex flex-col justify-center items-center" id="events">
-
-        <h1 className="text-3xl text-center font-bold mb-5">
-          Events
-        </h1>
-        <h3 className="text-center text-xl">
-          Come join us and socialize + have fun at one of our events!
-        </h3>
-        <h3 className="text-center mb-24 font-sans text-xl">
-          They're open to all prospective students.
-        </h3>
+      <div className=" w-screen pt-40 pb-25 
+          flex flex-col gap-24 justify-center items-center
+          bg-[linear-gradient(white,_#CFE0D8)]"
+        id="events"
+      >
+        <div className="w-[70%] md:w-[50%]
+            text-base md:text-lg xl:text-xl text-center"
+        >
+          <h1 className="text-3xl font-bold mb-5">
+            Events
+          </h1>
+          <h3>
+            Come join us and socialize + have fun at one of our events!
+          </h3>
+          <h3>
+            They're open to all prospective students.
+          </h3>
+        </div>
 
         {/* Events cards */}
-        <div className="flex flex-col justify-center md:grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10 w-[90%] sm:w-[80%]lg:transform lg:scale-90" id="event-cards">
-
+        <div className="w-[90%] sm:w-[75%]
+            grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 
+            gap-6 lg:gap-10 justify-center"
+          id="event-cards"
+        >
           {eventCards.map((eventCard, index) => (
             <Event {...eventCard} />
           ))}
@@ -105,7 +115,9 @@ export default function Events() {
                 {selectedEvent.dateTime} · {selectedEvent.location}
               </p>
               <p className="text-sm">{selectedEvent.descriptionEvent}</p>
-              <button className="bg-[#66AB7B] rounded text-white font-bold px-6 py-2 shadow">
+              <button
+                className="px-6 py-2 bg-[#66AB7B] rounded shadow text-white font-bold"
+              >
                 Register
               </button>
             </div>
