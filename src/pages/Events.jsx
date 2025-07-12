@@ -73,8 +73,9 @@ export default function Events() {
   return (
     <>
       {/* flex flex-col justify-center items-center bg-blue */}
-      <div className="bg-[linear-gradient(white,_#CFE0D8)] w-screen pt-40 pb-25 
-          flex flex-col gap-24 justify-center items-center"
+      <div className=" w-screen pt-40 pb-25 
+          flex flex-col gap-24 justify-center items-center
+          bg-[linear-gradient(white,_#CFE0D8)]"
         id="events"
       >
         <div className="w-[70%] md:w-[50%]
@@ -114,7 +115,9 @@ export default function Events() {
                 {selectedEvent.dateTime} · {selectedEvent.location}
               </p>
               <p className="text-sm">{selectedEvent.descriptionEvent}</p>
-              <button className="bg-[#66AB7B] rounded text-white font-bold px-6 py-2 shadow">
+              <button
+                className="px-6 py-2 bg-[#66AB7B] rounded shadow text-white font-bold"
+              >
                 Register
               </button>
             </div>

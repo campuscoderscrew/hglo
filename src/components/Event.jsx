@@ -57,8 +57,7 @@ export default function Event({ img, title, month, day, time, location, descript
 
 
       {/* <= Md screens */}
-      <div className="lg:hidden w-full md:w-[90%] xs:aspect-[7/2]
-        min-h-max p-4
+      <div className="lg:hidden p-4 w-full md:w-[90%]  min-h-max xs:aspect-[7/2]
         flex relative bg-white rounded-lg box-border 
         text-xs sm:text-sm md:text-base"
       >
