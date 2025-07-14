@@ -82,7 +82,7 @@ export default function About() {
                     We are a vibrant community of students from the Global Challenges and Solutions Honors Program at the University of Maryland, College Park. As a branch of the university-wide Honors Ambassadors Program, our mission is to advocate for the Honors College experience and inspire prospective students to join our dynamic academic community.
                 </p>
                 <h3 className="text-center font-bold text-xl m-auto mt-35">What We Offer</h3>
-                <div className="flex flex-col lg:flex-row justify-center items-center mt-20 pb-20 lg:pb-45 ">
+                <div className="flex flex-col lg:flex-row justify-center items-center mt-20 pb-20 lg:pb-45 lg:gap-x-32">
                     {
                         offers.map((offer, index) => (
                             index == 1 ?
