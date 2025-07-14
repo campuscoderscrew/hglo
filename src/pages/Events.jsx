@@ -13,7 +13,47 @@ export default function Events() {
       title: "Event Name Here",
       month: "May",
       day: "28",
-      time: "5:00 - 7:00PM",
+      time: "5:00 - 7:00 PM",
+      location: "Dorchester Basemeent",
+      description:
+        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
+    },
+    {
+      img: "mountains-placeholder.jpg",
+      title: "Event Name Here",
+      month: "May",
+      day: "29",
+      time: "5:00 - 7:00 PM",
+      location: "Dorchester Basemeent",
+      description:
+        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
+    },
+    {
+      img: "mountains-placeholder.jpg",
+      title: "Event Name Here",
+      month: "May",
+      day: "30",
+      time: "5:00 - 7:00 PM",
+      location: "Dorchester Basemeent",
+      description:
+        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
+    },
+    {
+      img: "mountains-placeholder.jpg",
+      title: "Event Name Here",
+      month: "May",
+      day: "31",
+      time: "5:00 - 7:00 PM",
+      location: "Dorchester Basemeent",
+      description:
+        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
+    },
+    {
+      img: "mountains-placeholder.jpg",
+      title: "Event Name Here",
+      month: "June",
+      day: "1",
+      time: "5:00 - 7:00 PM",
       location: "Dorchester Basemeent",
       description:
         "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
@@ -23,47 +63,7 @@ export default function Events() {
       title: "Event Name Here",
       month: "May",
       day: "28",
-      time: "5:00 - 7:00PM",
-      location: "Dorchester Basemeent",
-      description:
-        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
-    },
-    {
-      img: "mountains-placeholder.jpg",
-      title: "Event Name Here",
-      month: "May",
-      day: "28",
-      time: "5:00 - 7:00PM",
-      location: "Dorchester Basemeent",
-      description:
-        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
-    },
-    {
-      img: "mountains-placeholder.jpg",
-      title: "Event Name Here",
-      month: "May",
-      day: "28",
-      time: "5:00 - 7:00PM",
-      location: "Dorchester Basemeent",
-      description:
-        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
-    },
-    {
-      img: "mountains-placeholder.jpg",
-      title: "Event Name Here",
-      month: "May",
-      day: "28",
-      time: "5:00 - 7:00PM",
-      location: "Dorchester Basemeent",
-      description:
-        "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum...",
-    },
-    {
-      img: "mountains-placeholder.jpg",
-      title: "Event Name Here",
-      month: "May",
-      day: "28",
-      time: "5:00 - 7:00PM",
+      time: "5:00 - 7:00 PM",
       location: "Dorchester Basemeent",
       description:
         "Lorem ipsum sit amet dolor lorem ipsum, Lorem ipsum sit amet dolor, Lorem ipsum sit amet ipsum....",
@@ -99,30 +99,16 @@ export default function Events() {
           id="event-cards"
         >
           {eventCards.map((eventCard, index) => (
-            <Event {...eventCard} />
+            <Event
+              event={eventCard}
+              click={setSelectedEvent}
+              open={setIsOpen}
+            />
           ))}
 
         </div >
 
-        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-          {selectedEvent && (
-            <div className="text-center space-y-4">
-              <h2 className="text-2xl font-bold">{selectedEvent.eventName}</h2>
-              <p className="text-gray-600">
-                {selectedEvent.dateMonth} {selectedEvent.dateDay}
-              </p>
-              <p className="text-gray-600">
-                {selectedEvent.dateTime} · {selectedEvent.location}
-              </p>
-              <p className="text-sm">{selectedEvent.descriptionEvent}</p>
-              <button
-                className="px-6 py-2 bg-[#66AB7B] rounded shadow text-white font-bold"
-              >
-                Register
-              </button>
-            </div>
-          )}
-        </Modal>
+        <Modal open={isOpen} onClose={() => setIsOpen(false)} event={selectedEvent} />
 
       </div >
 

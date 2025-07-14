@@ -1,18 +1,25 @@
 import "../App.css"
 
-export default function Event({ img, title, month, day, time, location, description }) {
+export default function Event({ event, click, open }) {
+
+  const { img, title, month, day, time, location, description } = event
 
   // 3E685F
 
   return (
-    <div className="w-full flex justify-center relative">
+    <div className="w-full flex justify-center relative" onClick={() => {
+      click(event);
+      open(true);
+    }
+
+    }>
 
       {/* >= Large screens */}
       <div className="hidden lg:block 
-        bg-white w-full aspect-[3/4] rounded-lg relative"
+        bg-white w-full aspect-[3/4] rounded-lg relative hover:cursor-pointer"
       >
-        <img 
-          src={img} 
+        <img
+          src={img}
           className="w-full rounded-lg relative"
         />
 
@@ -59,13 +66,13 @@ export default function Event({ img, title, month, day, time, location, descript
       {/* <= Md screens */}
       <div className="lg:hidden p-4 w-full md:w-[90%]  min-h-max xs:aspect-[7/2]
         flex relative bg-white rounded-lg box-border 
-        text-xs sm:text-sm md:text-base"
+        text-xs sm:text-sm md:text-base hover:cursor-pointer"
       >
         <div className="self-center h-20 xs:h-full aspect-square">
-          <img 
-            src={img} 
+          <img
+            src={img}
             className="size-full object-cover
-              relative rounded-lg m-auto" 
+              relative rounded-lg m-auto"
           />
         </div>
 
@@ -81,9 +88,9 @@ export default function Event({ img, title, month, day, time, location, descript
           <h2 className="mb-4 text-base sm:text-lg md:text-xl">{title}</h2>
 
           <div className="flex items-center gap-x-2">
-            <img 
-              src="/events-icons/location.svg" 
-              className="block w-6" 
+            <img
+              src="/events-icons/location.svg"
+              className="block w-6"
             />
             <span>{location}</span>
           </div>
