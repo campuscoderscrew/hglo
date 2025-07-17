@@ -6,7 +6,6 @@ import About from './pages/About'
 import Events from './pages/Events'
 import Officers from './pages/Officers'
 import Join from './pages/Join'
-import Footer from './pages/Footer'
 
 function App() {
 
@@ -25,8 +24,6 @@ function App() {
       <Officers />
 
       <Join />
-
-      <Footer />
 
     </div>
   )

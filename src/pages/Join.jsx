@@ -1,5 +1,3 @@
-import Button from '../components/Button'
-
 export default function Join() {
     return (
         <div className="flex flex-col xl:flex-row *:content-center" id="join">
