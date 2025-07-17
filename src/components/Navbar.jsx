@@ -6,7 +6,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-[#43985e] to-[#367f4d] p-4 shadow-lg z-100">
+    <nav className="fixed top-0 left-0 right-0 bg-[#509A81] p-4 shadow-lg z-100">
       <div className="flex justify-between items-center w-full px-4 md:px-6 lg:px-10">
         <div className="flex items-center space-x-2">
           <img
@@ -62,7 +62,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 md:hidden bg-[#327748] p-4 shadow-xl transition-all duration-300 ease-in-out z-50">
+        <div className="absolute top-full left-0 right-0 md:hidden bg-[#509A81] p-4 shadow-xl transition-all duration-300 ease-in-out z-50">
           <div className="flex flex-col space-y-3">
             {['home', 'about', 'events', 'officers', 'join'].map((item) => (
               <a
