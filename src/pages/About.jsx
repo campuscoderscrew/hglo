@@ -86,9 +86,17 @@ export default function About() {
                     {
                         offers.map((offer, index) => (
                             index == 1 ?
-                                <Offer elem={offer} offset="top" />
+                                <Offer 
+                                    elem={offer} 
+                                    offset="top" 
+                                    cardClassName="bg-gradient-to-br from-[#689d8b] to-[#82b4c7]" 
+                                />
                                 :
-                                <Offer elem={offer} offset="bottom" />
+                                <Offer 
+                                    elem={offer} 
+                                    offset="bottom" 
+                                    cardClassName="bg-gradient-to-br from-[#689d8b] to-[#82b4c7]" 
+                                />
                         ))
                     }
                 </div>
