@@ -6,7 +6,7 @@ export default function Officer(props) {
             {/* Card background */}
             <div className="relative before:absolute 
                 before:-translate-3 before:-inset-1 before:-z-1 -rotate-4
-                before:bg-[#66AB7B] before:rounded-xl before:shadow-lg 
+                before:bg-hglo-main-500 before:rounded-xl before:shadow-lg 
                 
                 transition duration-300 hover:scale-105  
                 hover:-rotate-5 hover:*:rotate-6"

@@ -39,7 +39,7 @@ export default function Modal({ open, children, onClose, event }) {
             </div>
             <p className="text-sm">{event.description}</p>
             <button
-              className="px-6 py-2 bg-[#66AB7B] rounded shadow text-white font-bold"
+              className="px-6 py-2 bg-hglo-main-500 rounded shadow text-white font-bold"
             >
               Register
             </button>
