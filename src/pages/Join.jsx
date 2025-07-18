@@ -2,50 +2,9 @@ export default function Join() {
     return (
         <div className="flex flex-col xl:flex-row *:content-center" id="join">
             <div className="px-24 xl:px-48 py-24 md:py-36 xl:py-40
-                flex-4 relative bg-hglo-main-500 overflow-hidden"
+                flex-4 relative
+                bg-[url(join-background.svg)] bg-center"
             >
-                {/* SVG background */}
-                <img
-                    className="absolute w-50 md:w-70
-                        -top-2 left-10 xl:left-10"
-                    src="join-background/dot-array.svg"
-                />
-                <img
-                    className="absolute w-50 md:w-70
-                        -top-10 -left-20 md:-left-10"
-                    src="join-background/gradient-circle1.svg"
-                />
-                <img
-                    className="hidden md:block absolute w-20 xl:w-25
-                        top-20 xl:top-30 right-40"
-                    src="join-background/gradient-waves.svg"
-                />
-                <img
-                    className="hidden md:block absolute w-40 xl:w-50
-                        bottom-[calc(50%-200px)] right-25"
-                    src="join-background/gradient-hoop1.svg"
-                />
-
-                <img
-                    className="hidden xl:block z-1 absolute w-65
-                        -bottom-20 left-[calc(50%-150px)]"
-                    src="join-background/gradient-circle2.svg"
-                />
-                <img
-                    className="hidden md:block z-2 absolute w-100 xl:w-110
-                        -bottom-80 xl:-bottom-40 -left-40 xl:-left-40"
-                    src="join-background/gradient-hoop2.svg"
-                />
-                <img
-                    className="hidden md:block absolute w-100 xl:w-110
-                        -bottom-76 xl:-bottom-36 -left-36 xl:-left-36 "
-                    src="join-background/gradient-hoop3.svg"
-                />
-                <img
-                    className="hidden xl:block absolute w-70
-                        bottom-2 right-0"
-                    src="join-background/dot-array.svg"
-                />
 
                 {/* Join introduction for >=md screens */}
                 <div className="flex flex-col gap-8
@@ -118,10 +77,10 @@ export default function Join() {
                 <div className="flex justify-center">
                     <button
                         className="mt-4 px-6 py-4 
-                            block bg-hglo-main-500 rounded-md shadow-lg text-white  
+                            block bg-hglo-main-400 rounded-md shadow-lg text-white  
                             transition-color duration-300 
                             hover:bg-hglo-main-600 hover:cursor-pointer"
-                        href=""
+                        href={null}
                         target="_blank"
                     >
                         Ambassador Form
