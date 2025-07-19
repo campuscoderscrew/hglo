@@ -50,9 +50,8 @@ export default function Officers() {
             />
 
             {/* Wave divider */}
-            <div className="absolute -top-5 sm:-top-10 md:-top-15 lg:-top-25 xl:-top-30 
-                left-0 w-full
-                overflow-hidden leading-0"
+            <div className="absolute -top-5 sm:-top-10 md:-top-15 lg:-top-25 xl:-top-30
+                left-0 w-full overflow-hidden leading-0"
             >
                 <img
                     className="block w-full h-auto"

@@ -1,31 +1,32 @@
 export default function Join() {
     return (
-        <div className="flex flex-col xl:flex-row *:content-center" id="join">
-            <div className="px-24 xl:px-48 py-24 md:py-36 xl:py-40
-                flex-4 relative
-                bg-[url(join-background.svg)] bg-center"
-            >
-
-                {/* Join introduction for >=md screens */}
-                <div className="flex flex-col gap-8
-                    items-center justify-center
-                    text-white text-center *:z-1"
+        <div className="flex flex-col xl:flex-row" id="join">
+            <div className="flex">
+                <div className="size-full py-24 md:py-36 xl:py-48
+                    flex justify-center 
+                    bg-[url(join-background.svg)] bg-cover bg-center"
                 >
-                    <h2 className="text-3xl xl:text-4xl font-bold">JOIN US</h2>
-                    <p className="min-w-100 max-w-[80%]
-                            hidden md:block text-lg md:text-xl text-balance"
+                    {/* Join introduction for >=md screens */}
+                    <div className="flex flex-col gap-8
+                        items-center justify-center
+                        text-white text-center"
                     >
-                        Are you passionate about global challenges and eager to
-                        share your experiences with prospective students?{" "}
-                        <span className="font-bold">Join our team!</span>
-                    </p>
+                        <h2 className="text-3xl xl:text-4xl font-bold">JOIN US</h2>
+                        <p className="hidden md:block min-w-100 max-w-[80%]
+                            text-lg md:text-xl text-balance"
+                        >
+                            Are you passionate about global challenges and eager to
+                            share your experiences with prospective students?{" "}
+                            <span className="font-bold">Join our team!</span>
+                        </p>
+                    </div>
                 </div>
             </div>
 
             {/* Join requirements and form link */}
             <div className="px-10 sm:px-20 md:px-38 lg:px-44 xl:px-30 
                 py-20 md:py-30 xl:py-40
-                flex flex-col flex-5 gap-8 justify-center bg-white
+                flex flex-col gap-8 justify-center bg-white
                 text-base lg:text-lg"
             >
                 {/* Join introduction for <md screens */}
