@@ -45,15 +45,14 @@
 @theme {
   --breakpoint-xs: 30rem;
 
-  --color-hglo-main-400: #86b896;
-  --color-hglo-main-500: #66ab7b;
-  --color-hglo-main-600: #3a8f54;
-
-  --color-hglo-accent1-400: #9dc9dd;
-  --color-hglo-accent2-400: #d6a48c;
-
-  --color-hglo-natural-50: #e7e3d4;
-  --color-hglo-natural-300: #f3f3f3;
+  --color-hglo-main-100: #C6E0D0;
+  --color-hglo-main-400: #85B5AD;
+  --color-hglo-main-500: #689d8b;
+  --color-hglo-main-600: #509A81;
+  --color-hglo-accent1-400: #9CC6CB;
+  --color-hglo-accent2-400: #D6A48C;
+  --color-hglo-natural-50: #E7E3d4;
+  --color-hglo-natural-300: #F9FBFB;
 }
 
 hr {
