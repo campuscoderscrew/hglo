@@ -1,15 +1,19 @@
 export default function Officer(props) {
-    const { name, major, year, quote, imgSrc } = props;
+    const { name, major, year, quote, imgSrc, index } = props;
+
+    const cardBackColors = ["before:bg-hglo-accent1-400", "before:bg-hglo-main-400"];
+    const cardBackColor = cardBackColors[index % cardBackColors.length];
 
     return (
         <>
             {/* Card background */}
-            <div className="relative before:absolute 
-                before:-translate-3 before:-inset-1 before:-z-1 -rotate-4
-                before:bg-[#66AB7B] before:rounded-xl before:shadow-lg 
+            <div className={`relative before:absolute 
+                before:-translate-3 before:-inset-1 before:-z-1 -rotate-4 
+                ${cardBackColor} before:rounded-xl before:shadow-lg 
                 
                 transition duration-300 hover:scale-105  
-                hover:-rotate-5 hover:*:rotate-6"
+                hover:-rotate-5 hover:*:rotate-6
+                `}
             >
                 {/* Card content */}
                 <div className="w-70 sm:w-100 lg:w-75
