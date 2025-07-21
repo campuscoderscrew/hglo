@@ -1,74 +1,89 @@
 import "../App.css"
 
 export default function Event({ event, click, open }) {
+  let { img, title, month, day, time, location, description, type } = event;
 
-  const { img, title, month, day, time, location, description } = event
+  const openModal = () => {
+    click(event);
+    open(true);
+  }
 
-  // 3E685F
+  const eventColors = {
+    "work-study": "bg-[#C7DAD3]",
+    "social": "bg-[#FEEBB0]",
+    "educational": "bg-[#F7DCCF]",
+    "wellness": "bg-[#BAD6E0]",
+    "other": "bg-[#bfbfbf]",
+  }
+
+  const eventColor = (type = type?.toLowerCase()) in eventColors
+    ? eventColors[type]
+    : eventColors["other"];
 
   return (
-    <div className="w-full flex justify-center relative" onClick={() => {
-      click(event);
-      open(true);
-    }
-
-    }>
-
+    <div className="*:shadow-lg hover:cursor-pointer"
+      onClick={openModal}
+    >
       {/* >= Large screens */}
-      <div className="hidden lg:block 
-        bg-white w-full aspect-[3/4] rounded-lg relative hover:cursor-pointer"
-      >
+      <div className="hidden lg:block">
         <img
           src={img}
-          className="w-full rounded-lg relative"
+          className="-mb-4 w-full h-64 rounded-xl object-cover"
         />
 
-        <div className="p-8 -mt-4
-            flex flex-row gap-x-6 justify-start relative 
-            bg-white box-border rounded-lg
-            text-base xl:text-lg text-[#3E685F]"
+        {/* 
+          * The tab height is the total height minus the height of the image 
+        */}
+        <div className="p-8 h-[calc(100%-240px)] relative 
+            flex flex-col justify-between
+            bg-white rounded-lg
+            text-base xl:text-lg text-[#434343]"
         >
-          <div className="w-max flex flex-col items-center font-bold">
-            <p className="text-lg xl:text-xl">{month}</p>
-            <p className="text-2xl xl:text-3xl">{day}</p>
+          {/* Event main information */}
+          <div className="space-y-2 xl:space-y-3">
+            <h2 className="text-xl xl:text-2xl font-bold">{title}</h2>
+
+            <div className="flex gap-2">
+              <img src="events-icons/calendar.svg" className="w-6" />
+              <span className="font-light capitalize">{month} {day}, {time}</span>
+            </div>
+
+            <div className="flex gap-2">
+              <img src="events-icons/location.svg" className="w-6" />
+              <span className="font-light">{location}</span>
+            </div>
+
+            <p className="mt-2 text-sm xl:text-base text-black line-clamp-3">
+              {description}
+            </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <h2 className="text-2xl xl:text-3xl">{title}</h2>
+          {/* Event type badge and register button */}
+          <div className="mt-8 justify-self-end flex justify-between
+              *:px-6 *:py-2 *:rounded *:shadow-lg"
+          >
+            <span className={`${eventColor} text-black capitalize`}>
+              {type != null ? type : "Other"}
+            </span>
 
-            <div className="flex flex-col gap-1
-              *:flex *:items-center *gap-x-2"
+            <button className="bg-hglo-main-500
+              text-white bold cursor-pointer"
             >
-              <span>
-                <img src="/events-icons/time.svg" className="w-6" />
-                <span>{time}</span>
-              </span>
-
-              <span>
-                <img src="/events-icons/location.svg" className=" w-6" />
-                <span>{location}</span>
-              </span>
-            </div>
-
-            <p className="text-sm xl:text-base">{description}</p>
-            <div>
-              <button className="mt-4 px-6 py-2 bg-hglo-main-500 rounded shadow-lg
-                text-white text-left bold cursor-pointer"
-              >
-                Register
-              </button>
-            </div>
+              Register
+            </button>
           </div>
+
         </div>
       </div>
 
 
       {/* <= Md screens */}
-      <div className="lg:hidden p-4 w-full md:w-[90%]  min-h-max xs:aspect-[7/2]
-        flex relative bg-white rounded-lg box-border 
-        text-xs sm:text-sm md:text-base hover:cursor-pointer"
+      <div className="lg:hidden p-4 w-full
+          flex justify-start gap-4 
+          bg-white rounded-lg
+          text-xs sm:text-sm md:text-base"
       >
-        <div className="self-center h-20 xs:h-full aspect-square">
+        <div className="h-20 sm:h-24 md:h-28 aspect-square self-center">
           <img
             src={img}
             className="size-full object-cover
@@ -76,9 +91,9 @@ export default function Event({ event, click, open }) {
           />
         </div>
 
-        <div className="p-4 w-full
-            flex flex-col justify-center relative 
-            box-border rounded-lg text-[#3E685F]"
+        <div className="w-full
+            flex flex-col relative 
+            text-[#3E685F]"
         >
           <div className="mb-2 w-full flex justify-between">
             <span className="font-bold">{month} {day}</span>
@@ -96,19 +111,6 @@ export default function Event({ event, click, open }) {
           </div>
         </div>
       </div>
-      {/* <div className="grid grid-cols-3 gap-4">
-        {eventCards.map((eventCard, index) => {
-          return (
-            <li key={index}>
-              <h1>{eventCard.eventName}</h1>
-              <p>
-                Date: {eventCard.dateMonth} {eventCard.dateDay}
-              </p>
-            </li>
-          );
-        })}
-      </div> */}
-
     </div>
   );
 }
