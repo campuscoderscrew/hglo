@@ -1,21 +1,36 @@
 import "../App.css"
 
-export default function Event({ img, title, month, day, time, location, description, tag, tagColor }) {
+export default function Event({ event, click, open }) {
+
+  const { img, title, month, day, time, location, description, tag, tagColor } = event
 
   // 3E685F
 
   return (
-    <div className="w-full flex justify-center relative">
+    <div className="w-full flex justify-center relative" onClick={() => {
+      click(event);
+      open(true);
+    }
 
+    }>
 
       {/* >= Large screens */}
-      <div className="bg-white w-full aspect-[3/4] rounded-lg relative hidden lg:block">
-        <img src={img} className="w-full rounded-lg relative" />
+      <div className="hidden lg:block 
+        bg-white w-full aspect-[3/4] rounded-lg relative hover:cursor-pointer"
+      >
+        <img
+          src={img}
+          className="w-full rounded-lg relative"
+        />
 
-        <div className="box-border p-6 flex flex-row gap-x-6 justify-start *:text-[#3E685F] relative bg-white -mt-4 rounded-lg">
-          <div className="flex flex-col items-center w-max">
-            <p className="font-bold text-xl">{month}</p>
-            <p className="font-bold text-3xl">{day}</p>
+        <div className="p-8 -mt-4
+            flex flex-row gap-x-6 justify-start relative 
+            bg-white box-border rounded-lg
+            text-base xl:text-lg text-[#3E685F]"
+        >
+          <div className="w-max flex flex-col items-center font-bold">
+            <p className="text-lg xl:text-xl">{month}</p>
+            <p className="text-2xl xl:text-3xl">{day}</p>
           </div>
           <div>
             <h2 className="text-3xl mb-4">{title}</h2>
@@ -40,11 +55,22 @@ export default function Event({ img, title, month, day, time, location, descript
 
 
       {/* <= Md screens */}
-      <div className="lg:hidden w-full md:w-[90%] *:text-sm *:md:text-xl aspect-[7/3] sm:aspect-[7/2] min-h-max flex bg-white relative sm:px-4 rounded-lg p-1 sm:p-4 box-border">
+      <div className="lg:hidden p-4 w-full md:w-[90%]  min-h-max xs:aspect-[7/2]
+        flex relative bg-white rounded-lg box-border 
+        text-xs sm:text-sm md:text-base hover:cursor-pointer"
+      >
+        <div className="self-center h-20 xs:h-full aspect-square">
+          <img
+            src={img}
+            className="size-full object-cover
+              relative rounded-lg m-auto"
+          />
+        </div>
 
-        <img src={img} className="h-[95%] sm:h-[80%] aspect-square object-cover rounded-lg relative m-auto" />
-
-        <div className="w-full box-border p-6 flex flex-col *:text-[#3E685F] relative rounded-lg justify-center">
+        <div className="p-4 w-full
+            flex flex-col justify-center relative 
+            box-border rounded-lg text-[#3E685F]"
+        >
           <div className="mb-2 w-full flex justify-between">
             <span className="font-bold">{month} {day}</span>
             <span>{time}</span>
@@ -64,19 +90,6 @@ export default function Event({ img, title, month, day, time, location, descript
           </div>
         </div>
       </div>
-      {/* <div className="grid grid-cols-3 gap-4">
-        {eventCards.map((eventCard, index) => {
-          return (
-            <li key={index}>
-              <h1>{eventCard.eventName}</h1>
-              <p>
-                Date: {eventCard.dateMonth} {eventCard.dateDay}
-              </p>
-            </li>
-          );
-        })}
-      </div> */}
-
     </div>
   );
 }

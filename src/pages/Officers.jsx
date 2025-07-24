@@ -40,7 +40,7 @@ export default function Officers() {
             />
             <img
                 className="hidden md:block absolute w-40 
-                    top-[calc(15vw-170px)] left-[calc(50%-200px)]"
+                    top-[calc(24vw-170px)] left-[calc(50%-200px)]"
                 src="officers-background/gradient-ripple.svg"
             />
             <img
@@ -49,28 +49,19 @@ export default function Officers() {
                 src="officers-background/gradient-waves.svg"
             />
 
-            {/* Tilt divider */}
-            <div className="absolute top-0 left-0 w-full
-                overflow-hidden leading-0"
+            {/* Wave divider */}
+            <div className="absolute -top-5 sm:-top-10 md:-top-15 lg:-top-25 xl:-top-30
+                left-0 w-full overflow-hidden leading-0"
             >
-                <svg
-                    className="relative block
-                        w-full h-auto"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1200 120"
-                    preserveAspectRatio="none"
-                >
-                    <polygon
-                        className="fill-[#CFE0D8]"
-                        points="0,0 1200,0 0,120"
-                    />
-                </svg>
-
+                <img
+                    className="block w-full h-auto"
+                    src="wavy-border.svg"
+                />
             </div>
 
             {/* Captains content */}
             <div className="pb-48">
-                <h2 className="mt-[15vw] mb-24 z-1
+                <h2 className="mt-[24vw] mb-24 z-1
                     text-3xl text-center font-bold"
                 >
                     Meet the Captains
@@ -78,7 +69,7 @@ export default function Officers() {
 
                 <div className="mx-auto w-fit grid lg:grid-cols-2 gap-32">
                     {officersInfo.map((info, index) => (
-                        <Officer key={`officer-${info.name}-${index}`} {...info} />
+                        <Officer key={`officer-${info.name}-${index}`} {...info} index={index} />
                     ))}
                 </div>
             </div>

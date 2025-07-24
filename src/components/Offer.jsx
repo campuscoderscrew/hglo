@@ -1,10 +1,12 @@
-export default function Offer({ elem, offset }) {
+export default function Offer({ elem, offset, cardClassName }) {
 
-    let divStyle = "max-w-[90%] w-100 p-5 sm:w-120 py-8 md:w-140 md:min-h-60 lg:min-h-90 lg:w-1/5 lg:p-6 lg:py-12 flex flex-col items-center justify-center bg-[#86B896] rounded-lg box-border xl:transform xl:scale-110"
+
+    let divStyle = "max-w-[90%] w-100 p-5 sm:w-120 py-8 md:w-140 md:min-h-60 lg:min-h-90 lg:w-80 lg:p-6 lg:py-12 lg:mx-4 flex flex-col items-center justify-center rounded-lg box-border xl:transform xl:scale-110 xl:mx-8"
 
     // transition-transform duration-[1000ms] ease-in-out lg:hover:scale-115 hover:cursor z-1
 
     divStyle += offset === "top" ? " lg:mb-12 mb-12" : " lg:-mb-12 mb-12"
+    if (cardClassName) divStyle += ` ${cardClassName}`
 
     return (
 

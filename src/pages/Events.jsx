@@ -79,7 +79,7 @@ export default function Events() {
       description:
         "Unwind and focus in a serene environment—perfect for studying or simply relaxing with friends.",
       tag: "Workstudy",
-      tagColor: "#111314ff",
+      tagColor: "#BAD6E0",
     },
   ];
 
@@ -98,15 +98,19 @@ export default function Events() {
       {/* flex flex-col justify-center items-center bg-blue */}
       <div className="bg-[linear-gradient(white,_#CFE0D8)] w-screen py-25 pt-40 flex flex-col justify-center items-center" id="events">
 
-        <h1 className="text-3xl text-center font-bold mb-5">
-          Events
-        </h1>
-        <h3 className="text-center text-xl">
-          Come join us and socialize + have fun at one of our events!
-        </h3>
-        <h3 className="text-center mb-12 font-sans text-xl">
-          They're open to all prospective students.
-        </h3>
+        <div className="w-[70%] md:w-[50%]
+            text-base md:text-lg xl:text-xl text-center"
+        >
+          <h1 className="text-3xl font-bold mb-5">
+            Events
+          </h1>
+          <h3>
+            Come join us and socialize + have fun at one of our events!
+          </h3>
+          <h3>
+            They're open to all prospective students.
+          </h3>
+        </div>
 
         <div className="flex justify-center mb-12">
           <button
@@ -124,76 +128,34 @@ export default function Events() {
         </div>
 
         {/* Events cards */}
-        <div className="flex flex-col justify-center md:grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10 w-[90%] sm:w-[80%]lg:transform lg:scale-90" id="event-cards">
-
+        <div className="w-[90%] sm:w-[75%]
+            grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 
+            gap-6 lg:gap-10 justify-center"
+          id="event-cards"
+        >
           {activeTab === 'upcoming' && upcomingEvents.map((eventCard, index) => (
-            <Event key={index} {...eventCard} />
+            <Event
+              key={index}
+              event={eventCard}
+              click={setSelectedEvent}
+              open={setIsOpen}
+            />
           ))}
 
           {activeTab === 'past' && pastEvents.map((eventCard, index) => (
-            <Event key={index} {...eventCard} />
+            <Event
+              key={index}
+              event={eventCard}
+              click={setSelectedEvent}
+              open={setIsOpen}
+            />
           ))}
 
         </div >
 
-        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-          {selectedEvent && (
-            <div className="text-center space-y-4">
-              <h2 className="text-2xl font-bold">{selectedEvent.eventName}</h2>
-              <p className="text-gray-600">
-                {selectedEvent.dateMonth} {selectedEvent.dateDay}
-              </p>
-              <p className="text-gray-600">
-                {selectedEvent.dateTime} · {selectedEvent.location}
-              </p>
-              <p className="text-sm">{selectedEvent.descriptionEvent}</p>
-              <button className="bg-[#66AB7B] rounded text-white font-bold px-6 py-2 shadow">
-                Register
-              </button>
-            </div>
-          )}
-        </Modal>
+        <Modal open={isOpen} onClose={() => setIsOpen(false)} event={selectedEvent} />
 
       </div >
-
-      {/* <li
-            //   key={index}
-            //   className="bg-white mt-4 rounded shadow-lg w-75 cursor-pointer"
-            //   onClick={() => {
-            //     setSelectedEvent(eventCard);
-            //     setIsOpen(true);
-            //   }}
-            // > */}
-      {/* <img
-                className="w-full h-45 object-cover object-center mx-auto rounded shadow-lg"
-                src={eventCard.imgSrc}
-                alt={eventCard.eventName}
-              />
-              <div className="relative z-50 rounded -mt-1 p-4">
-                <h1 className="text-green-900 font-semibold text-left ml-12 text-xl mt-2">
-                  {eventCard.eventName}
-                </h1>
-                <p className="text-left ml-16 text-sm ">
-                  {eventCard.dateTime}
-                </p>
-                <p className="text-left ml-16 text-sm">
-                  {eventCard.location}
-                </p>
-                <div className="absolute top-2 left-1 rounded px-2 py-1 text-center">
-                  <p className="text-sm font-bold leading-none">
-                    {eventCard.dateMonth}
-                  </p>
-                  <p className="text-2xl font bold leading-none mt-1">
-                    {eventCard.dateDay}
-                  </p>
-                </div>
-                <p className="text-left text-xs ml-12 mt-2">
-                  {eventCard.descriptionEvent}
-                </p>
-                {/* Prevent modal from opening when clicking this button */}
-
-      {/* //         </div>
-      // </li> */}
     </>
   );
 }
