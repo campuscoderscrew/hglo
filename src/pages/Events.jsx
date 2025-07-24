@@ -53,7 +53,7 @@ export default function Events() {
       title: "Community Picnic",
       month: "October",
       day: "27",
-      time: "5:00 - 7:00PM",
+      time: "1:00 - 3:00PM",
       location: "McKeldin Mall",
       description:
         "Join us for a delightful community picnic filled with good food, great company, and fun activities for all ages.",
