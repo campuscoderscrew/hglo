@@ -17,6 +17,8 @@ export default function Events() {
       location: "ESJ Ground Floor Café Lounge",
       description:
         "Grab your favorite drink and settle in for a productive session—perfect blend of focus and ambiance.",
+      tag: "Workstudy",
+      tagColor: "#C7DAD3",
     },
     {
       img: "karaoke.png",
@@ -27,6 +29,8 @@ export default function Events() {
       location: "STAMP Student Union – TerpZone",
       description:
         "Unleash your inner star with friends—sing your heart out and make memories one chorus at a time.",
+      tag: "Social",
+      tagColor: "#FEEBB0",
     },
     {
       img: "workshop.png",
@@ -37,6 +41,8 @@ export default function Events() {
       location: "IDEA Factory (A. James Clark Hall)",
       description:
         "Join us for an engaging workshop where you can learn new skills and connect with like-minded individuals.",
+      tag: "Educational",
+      tagColor: "#F7DCCF",
     },
     {
       img: "gameNight.png",
@@ -47,6 +53,8 @@ export default function Events() {
       location: "STAMP Student Union – Benjamin Banneker Room",
       description:
         "Gather your friends for an exciting game night filled with laughter, competition, and fun—perfect for all ages.",
+      tag: "Social",
+      tagColor: "#FEEBB0",
     },
     {
       img: "communityPicnic.png",
@@ -57,6 +65,8 @@ export default function Events() {
       location: "McKeldin Mall",
       description:
         "Join us for a delightful community picnic filled with good food, great company, and fun activities for all ages.",
+      tag: "Social",
+      tagColor: "#FEEBB0",
     },
     {
       img: "relaxStudy.png",
@@ -67,6 +77,8 @@ export default function Events() {
       location: "Hornbake Library – Ground Floor Study Lounge",
       description:
         "Unwind and focus in a serene environment—perfect for studying or simply relaxing with friends.",
+      tag: "Workstudy",
+      tagColor: "#BAD6E0",
     },
   ];
 

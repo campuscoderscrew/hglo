@@ -1,6 +1,6 @@
 import "../App.css"
 
-export default function Event({ img, title, month, day, time, location, description }) {
+export default function Event({ img, title, month, day, time, location, description, tag, tagColor }) {
 
   // 3E685F
 
@@ -28,9 +28,12 @@ export default function Event({ img, title, month, day, time, location, descript
               {location}
             </span>
             <p className="my-2">{description}</p>
-            <button className="bg-[#66AB7B] rounded text-white bold px-6 py-2 cursor-pointer shadow mt-4 text-left">
-              Register
-            </button>
+            <div className="flex justify-between items-center mt-4">
+              <span style={{ backgroundColor: tagColor }} className="rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{tag}</span>
+              <button className="bg-[#66AB7B] rounded text-white bold px-6 py-2 cursor-pointer shadow text-left">
+                Register
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -48,10 +51,16 @@ export default function Event({ img, title, month, day, time, location, descript
           </div>
           <div>
             <h2 className="text-xl md:text-2xl mb-4">{title}</h2>
-            <span className="sm:flex items-center gap-x-2 hidden">
+            <span className="sm:flex items-center gap-x-2 hidden mb-2">
               <img src="/events-icons/location.svg" className=" w-6" />
               {location}
             </span>
+            <div className="flex justify-between items-center mt-4">
+              <span style={{ backgroundColor: tagColor }} className="rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{tag}</span>
+              <button className="bg-[#66AB7B] rounded text-white bold px-6 py-2 cursor-pointer shadow text-left">
+                Register
+              </button>
+            </div>
           </div>
         </div>
       </div>
