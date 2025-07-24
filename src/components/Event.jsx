@@ -1,65 +1,89 @@
 import "../App.css"
 
 export default function Event({ event, click, open }) {
+  let { img, title, month, day, time, location, description, type } = event;
 
-  const { img, title, month, day, time, location, description, tag, tagColor } = event
+  const openModal = () => {
+    click(event);
+    open(true);
+  }
 
-  // 3E685F
+  const eventColors = {
+    "work-study": "bg-[#C7DAD3]",
+    "social": "bg-[#FEEBB0]",
+    "educational": "bg-[#F7DCCF]",
+    "wellness": "bg-[#BAD6E0]",
+    "other": "bg-[#bfbfbf]",
+  }
+
+  const eventColor = (type = type?.toLowerCase()) in eventColors
+    ? eventColors[type]
+    : eventColors["other"];
 
   return (
-    <div className="w-full flex justify-center relative" onClick={() => {
-      click(event);
-      open(true);
-    }
-
-    }>
-
+    <div className="*:shadow-lg hover:cursor-pointer"
+      onClick={openModal}
+    >
       {/* >= Large screens */}
-      <div className="hidden lg:block 
-        bg-white w-full aspect-[3/4] rounded-lg relative hover:cursor-pointer"
-      >
+      <div className="hidden lg:block">
         <img
           src={img}
-          className="w-full rounded-lg relative"
+          className="-mb-4 w-full h-64 rounded-xl object-cover"
         />
 
-        <div className="p-8 -mt-4
-            flex flex-row gap-x-6 justify-start relative 
-            bg-white box-border rounded-lg
-            text-base xl:text-lg text-[#3E685F]"
+        {/* 
+          * The tab height is the total height minus the height of the image 
+        */}
+        <div className="p-8 h-[calc(100%-240px)] relative 
+            flex flex-col justify-between
+            bg-white rounded-lg
+            text-base xl:text-lg text-[#434343]"
         >
-          <div className="w-max flex flex-col items-center font-bold">
-            <p className="text-lg xl:text-xl">{month}</p>
-            <p className="text-2xl xl:text-3xl">{day}</p>
-          </div>
-          <div>
-            <h2 className="text-3xl mb-4">{title}</h2>
-            <span className="flex items-center gap-x-2 mb-1">
-              <img src="/events-icons/time.svg" className="w-6" />
-              {time}
-            </span>
-            <span className="flex items-center gap-x-2 mb-4">
-              <img src="/events-icons/location.svg" className=" w-6" />
-              {location}
-            </span>
-            <p className="my-2">{description}</p>
-            <div className="flex justify-between items-center mt-4">
-              <span style={{ backgroundColor: tagColor }} className="rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{tag}</span>
-              <button className="bg-[#66AB7B] rounded text-white bold px-6 py-2 cursor-pointer shadow text-left">
-                Register
-              </button>
+          {/* Event main information */}
+          <div className="space-y-2 xl:space-y-3">
+            <h2 className="text-xl xl:text-2xl font-bold">{title}</h2>
+
+            <div className="flex gap-2">
+              <img src="events-icons/calendar.svg" className="w-6" />
+              <span className="font-light capitalize">{month} {day}, {time}</span>
             </div>
+
+            <div className="flex gap-2">
+              <img src="events-icons/location.svg" className="w-6" />
+              <span className="font-light">{location}</span>
+            </div>
+
+            <p className="mt-2 text-sm xl:text-base text-black line-clamp-3">
+              {description}
+            </p>
           </div>
+
+          {/* Event type badge and register button */}
+          <div className="mt-8 justify-self-end flex justify-between
+              *:px-6 *:py-2 *:rounded *:shadow-lg"
+          >
+            <span className={`${eventColor} text-black capitalize`}>
+              {type != null ? type : "Other"}
+            </span>
+
+            <button className="bg-hglo-main-500
+              text-white bold cursor-pointer"
+            >
+              Register
+            </button>
+          </div>
+
         </div>
       </div>
 
 
       {/* <= Md screens */}
-      <div className="lg:hidden p-4 w-full md:w-[90%]  min-h-max xs:aspect-[7/2]
-        flex relative bg-white rounded-lg box-border 
-        text-xs sm:text-sm md:text-base hover:cursor-pointer"
+      <div className="lg:hidden p-4 w-full
+          flex justify-start gap-4 
+          bg-white rounded-lg
+          text-xs sm:text-sm md:text-base"
       >
-        <div className="self-center h-20 xs:h-full aspect-square">
+        <div className="h-20 sm:h-24 md:h-28 aspect-square self-center">
           <img
             src={img}
             className="size-full object-cover
@@ -67,26 +91,23 @@ export default function Event({ event, click, open }) {
           />
         </div>
 
-        <div className="p-4 w-full
-            flex flex-col justify-center relative 
-            box-border rounded-lg text-[#3E685F]"
+        <div className="w-full
+            flex flex-col relative 
+            text-[#3E685F]"
         >
           <div className="mb-2 w-full flex justify-between">
             <span className="font-bold">{month} {day}</span>
             <span>{time}</span>
           </div>
-          <div>
-            <h2 className="text-xl md:text-2xl mb-4">{title}</h2>
-            <span className="sm:flex items-center gap-x-2 hidden mb-2">
-              <img src="/events-icons/location.svg" className=" w-6" />
-              {location}
-            </span>
-            <div className="flex justify-between items-center mt-4">
-              <span style={{ backgroundColor: tagColor }} className="rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{tag}</span>
-              <button className="bg-[#66AB7B] rounded text-white bold px-6 py-2 cursor-pointer shadow text-left">
-                Register
-              </button>
-            </div>
+
+          <h2 className="mb-4 text-base sm:text-lg md:text-xl">{title}</h2>
+
+          <div className="flex items-center gap-x-2">
+            <img
+              src="/events-icons/location.svg"
+              className="block w-6"
+            />
+            <span>{location}</span>
           </div>
         </div>
       </div>
