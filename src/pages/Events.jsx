@@ -6,6 +6,7 @@ import { useState } from 'react';
 export default function Events() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [activeTab, setActiveTab] = useState('upcoming');
 
   const eventCards = [
     {
@@ -78,9 +79,19 @@ export default function Events() {
       description:
         "Unwind and focus in a serene environment—perfect for studying or simply relaxing with friends.",
       tag: "Workstudy",
-      tagColor: "#BAD6E0",
+      tagColor: "#111314ff",
     },
   ];
+
+  const upcomingEvents = eventCards.filter(event => {
+    const eventDate = new Date(`${event.month} ${event.day}, 2025`);
+    return eventDate >= new Date();
+  });
+
+  const pastEvents = eventCards.filter(event => {
+    const eventDate = new Date(`${event.month} ${event.day}, 2025`);
+    return eventDate < new Date();
+  });
 
   return (
     <>
@@ -93,15 +104,34 @@ export default function Events() {
         <h3 className="text-center text-xl">
           Come join us and socialize + have fun at one of our events!
         </h3>
-        <h3 className="text-center mb-24 font-sans text-xl">
+        <h3 className="text-center mb-12 font-sans text-xl">
           They're open to all prospective students.
         </h3>
+
+        <div className="flex justify-center mb-12">
+          <button
+            className={`px-6 py-2 text-xl ${activeTab === 'upcoming' ? 'border-b-2 border-black' : ''}`}
+            onClick={() => setActiveTab('upcoming')}
+          >
+            Upcoming
+          </button>
+          <button
+            className={`px-6 py-2 text-xl ${activeTab === 'past' ? 'border-b-2 border-black' : ''}`}
+            onClick={() => setActiveTab('past')}
+          >
+            Past
+          </button>
+        </div>
 
         {/* Events cards */}
         <div className="flex flex-col justify-center md:grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10 w-[90%] sm:w-[80%]lg:transform lg:scale-90" id="event-cards">
 
-          {eventCards.map((eventCard, index) => (
-            <Event {...eventCard} />
+          {activeTab === 'upcoming' && upcomingEvents.map((eventCard, index) => (
+            <Event key={index} {...eventCard} />
+          ))}
+
+          {activeTab === 'past' && pastEvents.map((eventCard, index) => (
+            <Event key={index} {...eventCard} />
           ))}
 
         </div >
