@@ -1,5 +1,6 @@
 import "../App.css"
 
+
 export default function Event({ event, click, open }) {
   let { img, title, month, day, time, location, description, type } = event;
 
