@@ -21,6 +21,14 @@ export default function Event({ event, click, open }) {
     ? eventColors[type]
     : eventColors["other"];
 
+
+  function format(text, max) {
+    if (text.length > max) {
+      return text.slice(0, max) + "..."
+    }
+    return text;
+  }
+
   return (
     <div className="*:shadow-lg hover:cursor-pointer"
       onClick={openModal}
@@ -41,20 +49,22 @@ export default function Event({ event, click, open }) {
             text-base xl:text-lg text-[#434343]"
         >
           {/* Event main information */}
-          <div className="space-y-2 xl:space-y-3">
-            <h2 className="text-xl xl:text-2xl font-bold">{title}</h2>
+          <div className="space-y-4 xl:space-y-3">
+            <h2 className="text-xl xl:text-2xl font-bold mb-5">{title}</h2>
 
-            <div className="flex gap-2">
-              <img src="events-icons/calendar.svg" className="w-6" />
-              <span className="font-light capitalize">{month} {day}, {time}</span>
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-3">
+                <img src="events-icons/time.svg" className="w-6" />
+                <span className="font-light capitalize">{month} {day}, {time}</span>
+              </div>
+
+              <div className="flex gap-3">
+                <img src="events-icons/location.svg" className="w-6" />
+                <span className="font-light">{format(location, 30)}</span>
+              </div>
             </div>
 
-            <div className="flex gap-2">
-              <img src="events-icons/location.svg" className="w-6" />
-              <span className="font-light">{location}</span>
-            </div>
-
-            <p className="mt-2 text-sm xl:text-base text-black line-clamp-3">
+            <p className="mt-2 text-sm xl:text-base text-black line-clamp-2">
               {description}
             </p>
           </div>

@@ -30,6 +30,20 @@
   }
 }
 
+@media (min-width: 380px) and (max-width: 640px) {
+  #modal {
+    max-width: 450px;
+  }
+
+}
+
+@media (min-width: 450px) and (min-height: 750px) {
+  #modal {
+    transform: scale(1.2);
+  }
+
+}
+
 /* @media (min-width: 870px) {
     #event-cards {
         width: 90%;
