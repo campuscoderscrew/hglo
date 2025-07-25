@@ -1,65 +1,65 @@
 [
     {
-        "img": "cafeWork.png",
+        "img": "events/cafeWork.png",
         "title": "Cafe + Work",
         "month": "May",
         "day": "28",
-        "time": "5:00 - 7:00PM",
+        "time": "5:00 - 7:00 PM",
         "location": "ESJ Ground Floor Café Lounge",
         "description":
             "Grab your favorite drink and settle in for a productive session—perfect blend of focus and ambiance.",
         "type": "work-study"
     },
     {
-        "img": "karaoke.png",
+        "img": "events/karaoke.avif",
         "title": "Karaoke & Friends",
         "month": "October ",
         "day": "3",
-        "time": "5:00 - 7:00PM",
+        "time": "5:00 - 7:00 PM",
         "location": "STAMP Student Union – TerpZone",
         "description":
             "Unleash your inner star with friends—sing your heart out and make memories one chorus at a time.",
         "type": "social"
     },
     {
-        "img": "workshop.png",
+        "img": "events/workshop.png",
         "title": "Workshop",
         "month": "May",
         "day": "28",
-        "time": "2:00 - 4:00PM",
+        "time": "2:00 - 4:00 PM",
         "location": "IDEA Factory (A. James Clark Hall)",
         "description":
             "Join us for an engaging workshop where you can learn new skills and connect with like-minded individuals.",
         "type": "educational"
     },
     {
-        "img": "gameNight.png",
+        "img": "events/gameNight.jpg",
         "title": "Game Night",
         "month": "December",
         "day": "3",
-        "time": "5:00 - 7:00PM",
+        "time": "5:00 - 7:00 PM",
         "location": "STAMP Student Union – Benjamin Banneker Room",
         "description":
             "Gather your friends for an exciting game night filled with laughter, competition, and fun—perfect for all ages.",
         "type": "social"
     },
     {
-        "img": "communityPicnic.png",
+        "img": "events/communityPicnic.png",
         "title": "Community Picnic",
         "month": "October",
         "day": "27",
-        "time": "1:00 - 3:00PM",
+        "time": "1:00 - 3:00 PM",
         "location": "McKeldin Mall",
         "description":
             "Join us for a delightful community picnic filled with good food, great company, and fun activities for all ages.",
         "type": "social"
     },
     {
-        "img": "relaxStudy.png",
+        "img": "events/relaxStudy.jpg",
         "title": "Relax & Study",
         "month": "May",
         "day": "28",
-        "time": "5:00 - 7:00PM",
+        "time": "5:00 - 7:00 PM",
         "location": "Hornbake Library – Ground Floor Study Lounge",
         "description":
             "Unwind and focus in a serene environment—perfect for studying or simply relaxing with friends.",
