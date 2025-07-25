@@ -20,17 +20,17 @@ export default function Events() {
   }, [])
   const today = new Date();
 
-      const currentEvents = data.filter((event) => {
-        const eventDate = new Date (`${event.month} ${event.day} , ${new Date().getFullYear()}`);
-        return eventDate >= today;
-      })
+  const currentEvents = data.filter((event) => {
+    const eventDate = new Date(`${event.month} ${event.day} , ${new Date().getFullYear()}`);
+    return eventDate >= today;
+  })
 
-      const pastEvents = data.filter((event) => {
-        const eventDate = new Date (`${event.month} ${event.day} , ${new Date().getFullYear()}`);
-        return eventDate < today;
-      })
+  const pastEvents = data.filter((event) => {
+    const eventDate = new Date(`${event.month} ${event.day} , ${new Date().getFullYear()}`);
+    return eventDate < today;
+  })
 
-      const eventsToShow = tab === "current" ? currentEvents : pastEvents
+  const eventsToShow = tab === "current" ? currentEvents : pastEvents
 
   return (
     <>
@@ -67,31 +67,31 @@ export default function Events() {
           </button>
         </div>
 
-         {/* Events Cards with Animation */}
+        {/* Events Cards with Animation */}
         <AnimatePresence mode="wait">
           <motion.div
             key={tab}
-            initial={{ opacity: 0, x: tab === "current" ? 100 : -100 }}
+            initial={{ opacity: 0, x: tab === "current" ? -50 : 50 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: tab === "current" ? -100 : 100 }}
-            transition={{ duration: 0.4 }}
+            exit={{ opacity: 0, x: tab === "current" ? -50 : 50 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
             className="w-[90%] sm:w-[75%]
               grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 
               gap-6 lg:gap-10 justify-center"
           >
 
-        {/* Events cards */}
-          {eventsToShow.map((eventCard, index) => (
-            <Event
-              key={index}
-              event={eventCard}
-              click={setSelectedEvent}
-              open={setIsOpen}
-            />
-    
-          ))}
+            {/* Events cards */}
+            {eventsToShow.map((eventCard, index) => (
+              <Event
+                key={index}
+                event={eventCard}
+                click={setSelectedEvent}
+                open={setIsOpen}
+              />
+
+            ))}
           </motion.div>
-          </AnimatePresence>
+        </AnimatePresence>
 
         <Modal
           open={isOpen}
