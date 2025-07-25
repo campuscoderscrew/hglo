@@ -12,6 +12,13 @@
   }
 }
 
+@media (min-width: 500px) and (max-width: 640px) {
+  #event-cards {
+    width: 85%;
+  }
+}
+
+
 @media (min-width: 1180px) {
   #event-cards {
     width: 70%;

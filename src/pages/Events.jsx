@@ -37,7 +37,7 @@ export default function Events() {
       {/* flex flex-col justify-center items-center bg-blue */}
       <div
         className=" w-screen pt-40 pb-25 
-          flex flex-col gap-24 justify-center items-center
+          flex flex-col gap-15 justify-center items-center
           bg-[linear-gradient(white,_#CFE0D8)]"
         id="events"
       >
@@ -78,6 +78,7 @@ export default function Events() {
             className="w-[90%] sm:w-[75%]
               grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 
               gap-6 lg:gap-10 justify-center"
+            id="event-cards"
           >
 
             {/* Events cards */}

@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 import { X } from "lucide-react"
+import { motion } from "framer-motion";
+
 
 export default function Modal({ open, children, onClose, event }) {
 
@@ -46,15 +48,18 @@ export default function Modal({ open, children, onClose, event }) {
         onClick={onClose}
       >
 
-        <div className="absolute w-full h-full bg-white blur-sm flex flex-col">
-          <div className="h-[50%]">
+        <div className="absolute w-full h-full blur-sm flex flex-col">
+          {/* <div className="h-[50%]">
             <img className="w-full h-full object-cover" src={event.img} />
           </div>
-          <div className="bg-white h-[50%]"></div>
+          <div className="bg-white h-[50%]"></div> */}
         </div>
 
         {/* Center modal in relation to screen-size - navbar (2.25 on top and bottom) */}
-        <div
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
           className="absolute w-full sm:h-max sm:max-w-md lg:max-w-lg bg-white rounded-lg shadow-lg overflow-y-auto max-h-max sm:max-h-[90vh] top-[50%] transform -translate-y-[calc(50%-2.25rem)]"
           onClick={(e) => e.stopPropagation()}
           id="modal"
@@ -62,7 +67,9 @@ export default function Modal({ open, children, onClose, event }) {
 
           {event && (
             <div className="flex flex-col">
-              <img src={event.img} className="w-full h-[40%] sm:border-t-0 rounded-t-lg" />
+              <div className="h-70 sm:border-t-0 rounded-t-lg relative">
+                <img src={event.img} className=" w-full h-full object-cover" />
+              </div>
               <div className="space-y-4 xl:space-y-3 p-6">
                 <h2 className="text-xl xl:text-2xl font-bold mb-5">{event.title}</h2>
 
@@ -113,7 +120,7 @@ export default function Modal({ open, children, onClose, event }) {
             <X strokeWidth={3} size={14} />
             Close
           </button>
-        </div>
+        </motion.div>
       </div>
     </>
   );
