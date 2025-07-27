@@ -12,7 +12,7 @@ const Navbar = () => {
           <img
             src={img1}
             alt="Custom Logo"
-            className="h-10 w-8 md:w-10 cursor-pointer"
+            className="lg:h-10 h-8 cursor-pointer"
           />
           <span className="text-white text-lg font-bold cursor-pointer">HGLO</span>
         </div>
