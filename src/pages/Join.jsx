@@ -1,10 +1,9 @@
 export default function Join() {
     return (
-        <div className="flex flex-col xl:flex-row" id="join">
+        <div className="flex flex-col xl:flex-row xl:max-h-[calc(100vh-4.5rem)]" id="join">
             <div className="flex">
                 <div className="size-full py-24 md:py-36 xl:py-48
-                    flex justify-center 
-                    bg-[url(join-background.svg)] bg-cover bg-center"
+                    flex justify-center bg-[url(join-background.svg)] bg-cover bg-center"
                 >
                     {/* Join introduction for >=md screens */}
                     <div className="flex flex-col gap-8
@@ -25,9 +24,7 @@ export default function Join() {
 
             {/* Join requirements and form link */}
             <div className="px-10 sm:px-20 md:px-38 lg:px-44 xl:px-30 
-                py-20 md:py-30 xl:py-40
-                flex flex-col gap-8 justify-center bg-white
-                text-base lg:text-lg"
+                py-20 md:py-30 xl:py-40 flex flex-col gap-8 justify-center bg-white text-base lg:text-lg"
             >
                 {/* Join introduction for <md screens */}
                 <p className="block md:hidden 
